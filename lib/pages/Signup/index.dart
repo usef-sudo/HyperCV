@@ -200,7 +200,7 @@ class _SignupState extends State<Signup> {
               InkWell(
                 onTap: (){
 //todo must create user using ali api
-                  //  Navigator.pushNamed(context, 'Join');
+                    Navigator.pushNamed(context, 'Join');
                 },
 
                 child: Center(

@@ -136,7 +136,8 @@ class _LoginState extends State<Login> {
               ),
               InkWell(
                 onTap: (){
-//todo must sign user using ali api
+                  Device.welcome =true;
+//todo must sign user using ali api and chamge the splash login flag shared prefrenses
                    Navigator.pushNamed(context, 'Home');
                 },
 
@@ -158,7 +159,7 @@ class _LoginState extends State<Login> {
                       ),
                       borderRadius: BorderRadius.all(
                           Radius.circular(20.0) //
-                      )),child: Center(child: Text("Sign Up",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),))),
+                      )),child: Center(child: Text("Sign In",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),))),
                 ),
                   ),
                 ),

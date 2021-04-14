@@ -280,6 +280,7 @@ class _LandingState extends State<Landing> {
               ),
               InkWell(
                 onTap: () {
+                  Device.welcome=true;
 //todo must sign user using ali api
                   Navigator.pushNamed(context, 'Home');
                 },

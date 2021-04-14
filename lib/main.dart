@@ -3,10 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:hypercv/pages/About/index.dart';
 import 'package:hypercv/pages/Home/addvideo.dart';
 import 'package:hypercv/pages/Home/index.dart';
+import 'package:hypercv/pages/Join/AddCV.dart';
+import 'package:hypercv/pages/Join/certification.dart';
+import 'package:hypercv/pages/Join/education.dart';
+import 'package:hypercv/pages/Join/index.dart';
+import 'package:hypercv/pages/Join/work.dart';
 import 'package:hypercv/pages/Landing/index.dart';
 import 'package:hypercv/pages/Login/index.dart';
 import 'package:hypercv/pages/introduction/index.dart';
 import 'package:hypercv/pages/splash/index.dart';
+import 'pages/Join/skills.dart';
 import 'pages/Signup/index.dart';
 import 'pages/Terms/index.dart';
 
@@ -48,6 +54,13 @@ class myAppState extends State<MyApp> {
           'Terms': (BuildContext context) => Terms(),
           'addvideo': (BuildContext context) => addvideo(),
           'introduction': (BuildContext context) => introduction(),
+          'Join': (BuildContext context) => Join(),
+          'AddCV': (BuildContext context) => AddCV(),
+          'Skills': (BuildContext context) =>  Skills(),
+          'work': (BuildContext context) =>  work(),
+          'education': (BuildContext context) =>  education(),
+          'certification': (BuildContext context) =>  certification(),
+
         },
       );
   }
