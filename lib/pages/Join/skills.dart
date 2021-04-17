@@ -157,7 +157,7 @@ class _SkillsState extends State<Skills> {
                 height: Device.height * 0.06,
                 width: Device.width * 0.8,
                 decoration: new BoxDecoration(
-                    color: Colors.black,
+                    color: Colors.green,
                     borderRadius: new BorderRadius.all(
                       Radius.circular(20.0),
                     )),
@@ -204,7 +204,7 @@ class _SkillsState extends State<Skills> {
                 height: Device.height * 0.06,
                 width: Device.width * 0.8,
                 decoration: new BoxDecoration(
-                    color: Colors.black,
+                    color: Colors.green,
                     borderRadius: new BorderRadius.all(
                       Radius.circular(20.0),
                     )),
@@ -251,7 +251,7 @@ class _SkillsState extends State<Skills> {
                 height: Device.height * 0.06,
                 width: Device.width * 0.8,
                 decoration: new BoxDecoration(
-                    color: Colors.black,
+                    color: Colors.green,
                     borderRadius: new BorderRadius.all(
                       Radius.circular(20.0),
                     )),

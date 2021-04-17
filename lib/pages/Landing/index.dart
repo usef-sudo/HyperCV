@@ -127,9 +127,11 @@ class _LandingState extends State<Landing> {
                               MainAxisAlignment.spaceBetween,
                               children: [
                                 CircleAvatar(
+                                  backgroundColor: Colors.white,
+
                                   radius: 20,
                                   backgroundImage: NetworkImage(
-                                      "https://i.pinimg.com/originals/7d/1a/3f/7d1a3f77eee9f34782c6f88e97a6c888.jpg"), // no matter how big it is, it won't overflow
+                                      "https://pics.freeicons.io/uploads/icons/png/2659939281579738432-512.png"), // no matter how big it is, it won't overflow
                                 ),
                                 Text(
                                   "LogIn with Google",
@@ -183,9 +185,11 @@ class _LandingState extends State<Landing> {
                               MainAxisAlignment.spaceBetween,
                               children: [
                                 CircleAvatar(
+                                  backgroundColor: Colors.white,
+
                                   radius: 20,
                                   backgroundImage: NetworkImage(
-                                      "https://i.pinimg.com/originals/7d/1a/3f/7d1a3f77eee9f34782c6f88e97a6c888.jpg"), // no matter how big it is, it won't overflow
+                                      "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Linkedin.svg/1200px-Linkedin.svg.png"), // no matter how big it is, it won't overflow
                                 ),
                                 Text(
                                   "LogIn with LinkedIn",
@@ -239,9 +243,10 @@ class _LandingState extends State<Landing> {
                               MainAxisAlignment.spaceBetween,
                               children: [
                                 CircleAvatar(
+                                  backgroundColor: Colors.white,
                                   radius: 20,
                                   backgroundImage: NetworkImage(
-                                      "https://i.pinimg.com/originals/7d/1a/3f/7d1a3f77eee9f34782c6f88e97a6c888.jpg"), // no matter how big it is, it won't overflow
+                                      "https://image.flaticon.com/icons/png/512/124/124010.png"), // no matter how big it is, it won't overflow
                                 ),
                                 Text(
                                   "LogIn with Facebook",

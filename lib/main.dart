@@ -11,6 +11,9 @@ import 'package:hypercv/pages/Join/work.dart';
 import 'package:hypercv/pages/Landing/index.dart';
 import 'package:hypercv/pages/Login/index.dart';
 import 'package:hypercv/pages/introduction/index.dart';
+import 'package:hypercv/pages/nofollowers/follow.dart';
+import 'package:hypercv/pages/nofollowers/index.dart';
+import 'package:hypercv/pages/nofollowers/interests.dart';
 import 'package:hypercv/pages/splash/index.dart';
 import 'pages/Join/skills.dart';
 import 'pages/Signup/index.dart';
@@ -60,6 +63,9 @@ class myAppState extends State<MyApp> {
           'work': (BuildContext context) =>  work(),
           'education': (BuildContext context) =>  education(),
           'certification': (BuildContext context) =>  certification(),
+          'Nofollowers': (BuildContext context) =>  Nofollowers(),
+          'interest': (BuildContext context) =>  interest(),
+          'follow': (BuildContext context) =>  follow(),
 
         },
       );
