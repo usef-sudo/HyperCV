@@ -37,6 +37,8 @@ dependencies:
   google_maps_place_picker:
   file_picker: ^1.12.4
   flutter_chips_input: ^1.9.5
+  video_player:
+
 
 
 dev_dependencies:
