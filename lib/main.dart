@@ -1,8 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:hypercv/pages/About/index.dart';
+import 'package:hypercv/pages/About/settings.dart';
 import 'package:hypercv/pages/Home/addvideo.dart';
 import 'package:hypercv/pages/Home/index.dart';
+import 'package:hypercv/pages/Home/search.dart';
 import 'package:hypercv/pages/Join/AddCV.dart';
 import 'package:hypercv/pages/Join/certification.dart';
 import 'package:hypercv/pages/Join/education.dart';
@@ -17,7 +19,7 @@ import 'package:hypercv/pages/nofollowers/interests.dart';
 import 'package:hypercv/pages/splash/index.dart';
 import 'pages/Join/skills.dart';
 import 'pages/Signup/index.dart';
-import 'pages/Terms/index.dart';
+import 'pages/About/terms.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -66,6 +68,8 @@ class myAppState extends State<MyApp> {
           'Nofollowers': (BuildContext context) =>  Nofollowers(),
           'interest': (BuildContext context) =>  interest(),
           'follow': (BuildContext context) =>  follow(),
+          'search': (BuildContext context) =>  search(),
+          'settings': (BuildContext context) =>  settings(),
 
         },
       );

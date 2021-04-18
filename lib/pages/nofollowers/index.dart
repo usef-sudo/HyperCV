@@ -12,7 +12,10 @@ class _NofollowersState extends State<Nofollowers> {
     return Scaffold(
         appBar: AppBar(      iconTheme: IconThemeData(color: Colors.black),
 
-          backgroundColor: Colors.white,title: Text("News Feed",style: TextStyle(color: Colors.black),),elevation: 0,centerTitle: true,actions: [IconButton(icon: Icon(Icons.search,color: Colors.black,), onPressed: (){}),IconButton(icon: Icon(Icons.messenger_outline,color: Colors.black,), onPressed: (){})],),
+          backgroundColor: Colors.white,title: Text("News Feed",style: TextStyle(color: Colors.black),),elevation: 0,centerTitle: true,
+
+
+ ),
 
         body: Column(children: [
           SizedBox(

@@ -52,7 +52,11 @@ class _MyDrawerState extends State<MyDrawer> {
                         color: Colors.green,
                         decoration: TextDecoration.underline),
                   ),
-            onTap: (){                      Navigator.pop(context);
+            onTap: (){
+
+                    Navigator.pop(context);
+                    Navigator.pushNamed(context, 'settings');
+
             },
                 )
               : ListTile(

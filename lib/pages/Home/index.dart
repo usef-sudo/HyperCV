@@ -185,20 +185,12 @@ class _HomeState extends State<Home> {
           ),
           elevation: 0,
           centerTitle: true,
-          actions: [
-            IconButton(
-                icon: Icon(
-                  Icons.search,
-                  color: Colors.black,
-                ),
-                onPressed: () {}),
-            IconButton(
-                icon: Icon(
-                  Icons.messenger_outline,
-                  color: Colors.black,
-                ),
-                onPressed: () {})
-          ],
+          actions: [IconButton(icon: Icon(Icons.search,color: Colors.black,), onPressed: (){
+
+            Navigator.pushNamed(context, 'search');
+
+
+          }),IconButton(icon: Icon(Icons.messenger_outline,color: Colors.black,), onPressed: (){})],
         ),
         body: Center(
           child: _widgetOptions.elementAt(_selectedIndex),

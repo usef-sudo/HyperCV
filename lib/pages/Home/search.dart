@@ -2,15 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:hypercv/Helpers/Device.dart';
 import 'package:flutter_chips_input/flutter_chips_input.dart';
 
-class follow extends StatefulWidget {
+class search extends StatefulWidget {
   @override
-  _followState createState() => _followState();
+  _searchState createState() => _searchState();
 }
-
-class _followState extends State<follow> {
-  List<Widget> MySkills = new List<Widget>();
+class _searchState extends State<search> {
   List<String> facebookuser = new List<String>();
-  TextEditingController skillc = new TextEditingController();
+  TextEditingController _search = new TextEditingController();
   @override
   void initState() {
     facebookuser.add("1");
@@ -36,8 +34,8 @@ class _followState extends State<follow> {
                   decoration: BoxDecoration(
                     border: Border.all(width: 1.0),
                     borderRadius: BorderRadius.all(Radius.circular(
-                            10.0) //                 <--- border radius here
-                        ),
+                        10.0) //                 <--- border radius here
+                    ),
                   ),
                   child: Icon(Icons.arrow_back)),
             ),
@@ -49,9 +47,9 @@ class _followState extends State<follow> {
               child: Text("SKIP", style: TextStyle(color: Colors.black)),
             )
           ],
-          title: Text('Follow people',
+          title: Text('Discover',
               style:
-                  TextStyle(fontWeight: FontWeight.bold, color: Colors.black)),
+              TextStyle(fontWeight: FontWeight.bold, color: Colors.black)),
           elevation: 0,
           iconTheme: IconThemeData(color: Colors.black),
           backgroundColor: Colors.white),
@@ -74,40 +72,30 @@ class _followState extends State<follow> {
                 Container(
                   height: 15,
                 ),
-                InkWell(
-                  onTap: () {
-//todo must create user using ali api
-                  },
-                  child: Center(
-                    child: Container(
-                      height: Device.height * 0.06,
-                      width: Device.width * 0.8,
-                      decoration: new BoxDecoration(
-                          color: Colors.black,
-                          borderRadius: new BorderRadius.all(
-                            Radius.circular(20.0),
-                          )),
-                      child: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: Container(
-                            decoration: BoxDecoration(
-                                border: Border.all(
-                                    color: Colors.green[800], width: 1.0),
-                                borderRadius:
-                                    BorderRadius.all(Radius.circular(20.0) //
-                                        )),
-                            child: Center(
-                                child: Text(
-                              "Import your contact",
-                              style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white),
-                            ))),
-                      ),
-                    ),
+                Padding(
+                  padding:  EdgeInsets.fromLTRB(Device.width*0.1,0,Device.width*0.1,0),
+                  child: TextField(
+                    controller:  _search,
+                    decoration: new InputDecoration(
+
+                        focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20),
+
+                          borderSide: BorderSide(color: Colors.black),
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20),
+
+                          borderSide: BorderSide(color: Colors.transparent),
+                        ),
+                        filled: true,
+
+
+                        hintStyle: new TextStyle(color: Colors.grey[600]),
+                        hintText: "Search..",
+                        fillColor: Color.fromRGBO(238, 238, 255, 1)),
                   ),
-                ),
-                Container(
+                ),                Container(
                   height: 15,
                 ),
 
@@ -126,19 +114,19 @@ class _followState extends State<follow> {
                         Tab(
                           //    icon: Icon(Icons.directions_bike),
                           child: Text(
-                            "FaceBook",
+                            "UI Designer",
                           ),
                         ),
                         Tab(
                           //    icon: Icon(Icons.directions_bike),
-                          child: Text("Instagram"),
+                          child: Text("UX Designer"),
                         ),
                         Tab(
-                          child: Text("LinkedIn"),
+                          child: Text("Graphic"),
                         ),
                         Tab(
                           //    icon: Icon(Icons.directions_bike),
-                          child: Text("Google"),
+                          child: Text("Flutter"),
                         ),
                       ],
                     ),
@@ -216,19 +204,19 @@ Widget CardBuilder(List<String> ll) {
                               padding: const EdgeInsets.all(8.0),
                               child: Card(
                                   child: Container(
-                                decoration: new BoxDecoration(
-                                    color: Colors.white,
-                                    borderRadius: new BorderRadius.all(
-                                      Radius.circular(70.0),
-                                    )),
-                                width: 140,
-                                height: 50,
-                                child: Center(
-                                    child: Text(
-                                  "See Portfolio",
-                                  style: TextStyle(fontWeight: FontWeight.bold),
-                                )),
-                              )),
+                                    decoration: new BoxDecoration(
+                                        color: Colors.white,
+                                        borderRadius: new BorderRadius.all(
+                                          Radius.circular(70.0),
+                                        )),
+                                    width: 140,
+                                    height: 50,
+                                    child: Center(
+                                        child: Text(
+                                          "See Portfolio",
+                                          style: TextStyle(fontWeight: FontWeight.bold),
+                                        )),
+                                  )),
                             ),
                             Padding(
                               padding: const EdgeInsets.all(8.0),
@@ -236,11 +224,11 @@ Widget CardBuilder(List<String> ll) {
                                 height: 50,
                                 width: 50,
                                 child: Icon(
-                                  Icons.person_add_alt,
-                                  color: Colors.green,
+                                  Icons.messenger,
+                                  color: Colors.grey,
                                 ),
                                 decoration: new BoxDecoration(
-                                    color: Colors.grey,
+                                    color: Colors.green,
                                     borderRadius: new BorderRadius.all(
                                       Radius.circular(10.0),
                                     )),
