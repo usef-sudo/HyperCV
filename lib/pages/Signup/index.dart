@@ -4,7 +4,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
 import 'package:easy_localization/easy_localization.dart';
 
-import '../../../Helpers/Device.dart';
+import '../../Helpers/Device.dart';
 
 class Signup extends StatefulWidget {
   @override
