@@ -7,28 +7,10 @@ class Skills extends StatefulWidget {
   _SkillsState createState() => _SkillsState();
 }
 
-Widget _buildChip(String label) {
-  return Chip(
-    labelPadding: EdgeInsets.all(2.0),
-    label: Text(
-      label,
-      style: TextStyle(
-        color: Colors.black,
-      ),
-    ),
-    backgroundColor: Color.fromRGBO(238, 238, 255, 1),
-    elevation: 2.0,
-    shadowColor: Color.fromRGBO(238, 238, 255, 1),
-    padding: EdgeInsets.all(8.0),
-    onDeleted: () {
-
-      }
-
-  );
-}
 
 class _SkillsState extends State<Skills> {
   List<Widget> MySkills = new List<Widget>();
+  List<String> MySkillss = new List<String>();
 
   TextEditingController skillc = new TextEditingController();
 
@@ -117,7 +99,8 @@ class _SkillsState extends State<Skills> {
                               FlatButton(
                                 child: Text('ADD'),
                                 onPressed: () {
-                                  MySkills.add(_buildChip(skillc.text));
+                                //  MySkills.add(_buildChip(skillc.text));
+                                  MySkillss.add(skillc.text);
                                   skillc.clear();
                                   Navigator.of(context).pop();
                                 },
@@ -346,6 +329,34 @@ class _SkillsState extends State<Skills> {
   }
 
   chipList() {
+    //return Wrap(spacing: 6.0, runSpacing: 6.0, children: MySkills);
+    MySkills.clear();
+    MySkillss.forEach((element) {MySkills.add(_buildChip(element));});
     return Wrap(spacing: 6.0, runSpacing: 6.0, children: MySkills);
+  }
+
+
+  Widget _buildChip(String label) {
+    return Chip(
+        labelPadding: EdgeInsets.all(2.0),
+        label: Text(
+          label,
+          style: TextStyle(
+            color: Colors.black,
+          ),
+        ),
+        backgroundColor: Color.fromRGBO(238, 238, 255, 1),
+        elevation: 2.0,
+        shadowColor: Color.fromRGBO(238, 238, 255, 1),
+        padding: EdgeInsets.all(8.0),
+        onDeleted: () {
+          setState((){
+
+            MySkillss.remove(label);
+
+          });
+        }
+
+    );
   }
 }

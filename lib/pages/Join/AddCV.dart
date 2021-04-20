@@ -7,6 +7,8 @@ import 'package:file_picker/file_picker.dart';
 import 'package:video_player/video_player.dart';
 
 class AddCV extends StatefulWidget {
+  static File CVV;
+
   @override
   _AddCVState createState() => _AddCVState();
 }
@@ -15,7 +17,6 @@ class _AddCVState extends State<AddCV> {
   VideoPlayerController _controller;
 
   List<File> fileList = new List<File>();
-  File _certification;
 
   @override
   Widget build(BuildContext context) {
@@ -82,7 +83,7 @@ class _AddCVState extends State<AddCV> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        (_certification != null)
+                        (AddCV.CVV != null)
                             ? Stack(
                                 children: [
                                   Container(
@@ -93,19 +94,19 @@ class _AddCVState extends State<AddCV> {
                                               MainAxisAlignment.center,
                                           children: <Widget>[
                                         Icon(Icons.insert_drive_file),
-                                        Text(p.extension(_certification.path))
+                                        Text(p.extension(AddCV.CVV.path))
                                       ])),
                                 ],
                               )
                             : Container(
                                 child: Text("Attach MP4"),
                               ),
-                        (_certification != null)
+                        (AddCV.CVV != null)
                             ? IconButton(
                                 icon: Icon(Icons.clear),
                                 onPressed: () {
                                   setState(() {
-                                    _certification = null;
+                                    AddCV.CVV = null;
                                   });
                                 })
                             : IconButton(
@@ -113,7 +114,7 @@ class _AddCVState extends State<AddCV> {
                                 onPressed: () {
                                   addfile().then((value) {
                                     _controller = VideoPlayerController.file(
-                                        _certification);
+                                        AddCV.CVV);
                                     _controller.addListener(() {
                                       setState(() {});
                                     });
@@ -144,7 +145,7 @@ class _AddCVState extends State<AddCV> {
               padding: const EdgeInsets.all(8.0),
               child: InkWell(
                 onTap: () {
-                  if (_certification == null) {
+                  if (AddCV.CVV == null) {
                   } else {
                     showDialog(
                         context: context,
@@ -188,7 +189,7 @@ class _AddCVState extends State<AddCV> {
                   }
                 },
                 child: Text(
-                  "Preview", //todo make it show the _certification video on alert
+                  "Preview", //todo make it show the CVV video on alert
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: Device.height * 0.02),
@@ -455,7 +456,7 @@ class _AddCVState extends State<AddCV> {
       type: FileType.video,
     ).then((file) {
       setState(() {
-        _certification = file;
+        AddCV.CVV = file;
       });
     });
   }

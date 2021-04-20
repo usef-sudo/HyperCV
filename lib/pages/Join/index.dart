@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hypercv/Helpers/Device.dart';
 import 'package:google_maps_place_picker/google_maps_place_picker.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:hypercv/pages/Join/AddCV.dart';
+import 'package:path/path.dart' as p;
 
 class Join extends StatefulWidget {
   @override
@@ -291,10 +293,23 @@ class _JoinState extends State<Join> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text(
-                              "None",
-                              style: TextStyle(
-                                  fontSize: 15, fontWeight: FontWeight.bold),
+                            (AddCV.CVV != null)
+                                ? Stack(
+                              children: [
+                                Container(
+                                    child: Column(
+                                        crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                        mainAxisAlignment:
+                                        MainAxisAlignment.center,
+                                        children: <Widget>[
+                                          Icon(Icons.insert_drive_file),
+                                          Text(p.extension(AddCV.CVV.path))
+                                        ])),
+                              ],
+                            ):Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text("None",style: TextStyle(fontWeight: FontWeight.bold),),
                             ),
                             Container(
                                 decoration: BoxDecoration(

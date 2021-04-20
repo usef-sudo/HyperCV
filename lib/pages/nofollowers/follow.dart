@@ -8,7 +8,6 @@ class follow extends StatefulWidget {
 }
 
 class _followState extends State<follow> {
-  List<Widget> MySkills = new List<Widget>();
   List<String> facebookuser = new List<String>();
   TextEditingController skillc = new TextEditingController();
   @override
