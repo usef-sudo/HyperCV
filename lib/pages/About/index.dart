@@ -24,6 +24,11 @@ class _AboutState extends State<About> {
     _controller.play();    super.initState();
   }
   @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(

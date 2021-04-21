@@ -28,6 +28,7 @@ Widget _buildChip(String label) {
 }
 
 class _interestState extends State<interest> {
+
   List<Widget> MySkills = new List<Widget>();
   List<String> MySkillss = new List<String>();
 
@@ -35,6 +36,7 @@ class _interestState extends State<interest> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(

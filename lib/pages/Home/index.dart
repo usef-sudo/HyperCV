@@ -66,9 +66,12 @@ class _HomeState extends State<Home> {
 
                               if (0 == 0) {
                                 Navigator.pop(context);
+                                _controller.pause();
+
                                 Navigator.pushNamed(context, "Nofollowers");
                               } else {
                                 Navigator.pop(context);
+                                _controller.pause();
                               }
                             },
                             child: Align(
@@ -135,7 +138,11 @@ class _HomeState extends State<Home> {
     // TODO: implement initState
     super.initState();
   }
-
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -175,23 +182,7 @@ class _HomeState extends State<Home> {
           //selectedItemColor: Colors.black,
           onTap: _onItemTapped,
         ),
-        drawer: MyDrawer(),
-        appBar: AppBar(
-          iconTheme: IconThemeData(color: Colors.black),
-          backgroundColor: Colors.white,
-          title: Text(
-            "News Feed",
-            style: TextStyle(color: Colors.black),
-          ),
-          elevation: 0,
-          centerTitle: true,
-          actions: [IconButton(icon: Icon(Icons.search,color: Colors.black,), onPressed: (){
 
-            Navigator.pushNamed(context, 'search');
-
-
-          }),IconButton(icon: Icon(Icons.messenger_outline,color: Colors.black,), onPressed: (){})],
-        ),
         body: Center(
           child: _widgetOptions.elementAt(_selectedIndex),
         ),
