@@ -4,6 +4,7 @@ import 'package:hypercv/pages/About/index.dart';
 import 'package:hypercv/pages/About/settings.dart';
 import 'package:hypercv/pages/Home/addvideo.dart';
 import 'package:hypercv/pages/Home/index.dart';
+import 'package:hypercv/pages/Home/jobDetails.dart';
 import 'package:hypercv/pages/Home/search.dart';
 import 'package:hypercv/pages/Join/AddCV.dart';
 import 'package:hypercv/pages/Join/certification.dart';
@@ -70,6 +71,7 @@ class myAppState extends State<MyApp> {
           'follow': (BuildContext context) =>  follow(),
           'search': (BuildContext context) =>  search(),
           'settings': (BuildContext context) =>  settings(),
+          'jobDetails': (BuildContext context) =>  JobDetails(),
 
         },
       );

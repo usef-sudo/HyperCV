@@ -4,18 +4,17 @@ import 'package:hypercv/Helpers/Device.dart';
 
 import 'drawer.dart';
 
-class Jobs extends StatefulWidget {
+class JobDetails extends StatefulWidget {
   @override
-  _JobsState createState() => _JobsState();
+  _JobDetailsState createState() => _JobDetailsState();
 }
 
-class _JobsState extends State<Jobs> {
+class _JobDetailsState extends State<JobDetails> {
   bool isremote=false;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
-      drawer: MyDrawer(),
+backgroundColor: Colors.white,      drawer: MyDrawer(),
       appBar: AppBar(
         iconTheme: IconThemeData(color: Colors.black),
         backgroundColor: Colors.white,
@@ -73,8 +72,8 @@ class _JobsState extends State<Jobs> {
                                 color: Color.fromRGBO(238, 238, 255, 1),
                                 border: Border.all(width: 1.0),
                                 borderRadius: BorderRadius.all(Radius.circular(
-                                        10.0) //                 <--- border radius here
-                                    ),
+                                    10.0) //                 <--- border radius here
+                                ),
                               ),
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
@@ -96,8 +95,8 @@ class _JobsState extends State<Jobs> {
                                 color: Color.fromRGBO(238, 238, 255, 1),
                                 border: Border.all(width: 1.0),
                                 borderRadius: BorderRadius.all(Radius.circular(
-                                        10.0) //                 <--- border radius here
-                                    ),
+                                    10.0) //                 <--- border radius here
+                                ),
                               ),
                               child: Padding(
                                 padding: const EdgeInsets.all(8.0),
@@ -115,91 +114,26 @@ class _JobsState extends State<Jobs> {
           Container(
             height: 20,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              new InkWell(
-                onTap: () {
-                  setState(() {
-    isremote = false;
 
-    });
-                },
-                child: new Container(
-                  width: 150.0,
-                  height: 50.0,
-                  decoration: new BoxDecoration(
-                    color: isremote ? Colors.grey : Colors.black,
-                    border: new Border.all(color: Colors.white, width: 2.0),
-                    borderRadius: new BorderRadius.circular(15.0),
-                  ),
-                  child: new Center(
-                    child: new Text(
-                      'Full Time',
-                      style: new TextStyle(fontSize: 18.0, color: Colors.white),
-                    ),
-                  ),
-                ),
-              ),
-              new InkWell(
-                onTap: () {
-                  setState(() {
-    isremote = true;
 
-    });
-                },
-                child: new Container(
-                  width: 150.0,
-                  height: 50.0,
-                  decoration: new BoxDecoration(
-                    color: isremote ? Colors.black : Colors.grey,
-                    border: new Border.all(color: Colors.white, width: 2.0),
-                    borderRadius: new BorderRadius.circular(15.0),
-                  ),
-                  child: new Center(
-                    child: new Text(
-                      'Remote',
-                      style: new TextStyle(fontSize: 18.0, color: Colors.white),
-                    ),
-                  ),
-                ),
-              ),
-            ],
-          ),
-          Container(
-            height: 12,
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,children: [
-              Text("Recommended Jobs",style: TextStyle(fontWeight: FontWeight.bold),),
-              Icon(Icons.crop_square,color: Colors.green,)
-            ],),
-          ),
           Expanded(
-            child: ListView.builder(
-              shrinkWrap: true,
-              itemCount: 2,
-              itemBuilder: (context, index) {
-                return  Padding(
-                  padding: EdgeInsets.fromLTRB(
-                      Device.width * 0.05, 0, Device.width * 0.05, 0),
-                  child: InkWell(onTap: (){
-                    Navigator.pushNamed(context, "jobDetails");
-                  },
-                    child: Card(
-                      color: Color.fromRGBO(238, 238, 255, 1),
-                      shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15.0)),
-                      elevation: 1,
-                      child: Padding(
-                        padding: EdgeInsets.all(Device.height * 0.012),
-                        child: Container(
-                            height: Device.height * 0.09,
-                            child: Align(
-                                alignment: Alignment.centerLeft,
-                                child:
+            child: Padding(
+              padding: EdgeInsets.fromLTRB(
+                  Device.width * 0.05, 0, Device.width * 0.05, 0),
+              child: Card(
+                  color: Color.fromRGBO(238, 238, 255, 1),
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15.0)),
+                  elevation: 1,
+                  child: Padding(
+                    padding: EdgeInsets.all(Device.height * 0.012),
+                    child: Container(
+                        child: Align(
+                            alignment: Alignment.centerLeft,
+                            child:
 
+                            Column(
+                              children: [
                                 ListTile(
                                   leading: Padding(
                                     padding: const EdgeInsets.all(8.0),
@@ -223,16 +157,66 @@ class _JobsState extends State<Jobs> {
                                         color: Colors.black,
                                         fontWeight: FontWeight.bold),
                                   ),
-                                )
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.all(8.0),
+                                  child: Text("""#جورج_وسوف​
+#أجمل_أغاني_جورج_وسوف​
+جورج وسوف
 
-)),
-                      ),
-                    ),
+
+قديم الوسوف 1985 
+ Relax In / 1985 
+
+© UMG ( EMI ARABIA ) 
+
+® Remastered By 
+Walid Yusuf Jado
+2020
+Exclusive Version."""),
+                                )
+                              ],
+
+                            )
+
+                        )),
                   ),
-                );
-              },
+                ),
+              ),
             ),
-          )
+          Container(height: 20,),
+          InkWell(
+            onTap: () {
+//todo must create user using ali api
+            },
+            child: Center(
+              child: Container(
+                height: Device.height * 0.06,
+                width: Device.width * 0.8,
+                decoration: new BoxDecoration(
+                    color: Colors.black,
+                    borderRadius: new BorderRadius.all(
+                      Radius.circular(20.0),
+                    )),
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Container(
+                      decoration: BoxDecoration(
+                          border:
+                          Border.all(color: Colors.green[800], width: 1.0),
+                          borderRadius:
+                          BorderRadius.all(Radius.circular(20.0) //
+                          )),
+                      child: Center(
+                          child: Text(
+                            "Fast Apply",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, color: Colors.white),
+                          ))),
+                ),
+              ),
+            ),
+          ),
         ],
 
       ),
