@@ -203,19 +203,24 @@ Widget CardBuilder(List<String> ll) {
                             Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Card(
-                                  child: Container(
-                                    decoration: new BoxDecoration(
-                                        color: Colors.white,
-                                        borderRadius: new BorderRadius.all(
-                                          Radius.circular(70.0),
-                                        )),
-                                    width: 140,
-                                    height: 50,
-                                    child: Center(
-                                        child: Text(
-                                          "See Portfolio",
-                                          style: TextStyle(fontWeight: FontWeight.bold),
-                                        )),
+                                  child: GestureDetector(
+                                    onTap: (){
+                                      Navigator.pushNamed(context, 'Profile2');
+                                    },
+                                    child: Container(
+                                      decoration: new BoxDecoration(
+                                          color: Colors.white,
+                                          borderRadius: new BorderRadius.all(
+                                            Radius.circular(70.0),
+                                          )),
+                                      width: 140,
+                                      height: 50,
+                                      child: Center(
+                                          child: Text(
+                                            "See Portfolio",
+                                            style: TextStyle(fontWeight: FontWeight.bold),
+                                          )),
+                                    ),
                                   )),
                             ),
                             Padding(

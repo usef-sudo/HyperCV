@@ -1,46 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:hypercv/Helpers/Device.dart';
+import 'package:hypercv/pages/Home/drawer.dart';
 
-import 'drawer.dart';
-
-class Profile extends StatefulWidget {
+class Profile2 extends StatefulWidget {
   @override
-  _ProfileState createState() => _ProfileState();
+  _Profile2State createState() => _Profile2State();
 }
 
-class _ProfileState extends State<Profile> {
+class _Profile2State extends State<Profile2> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: MyDrawer(),
       appBar: AppBar(
         iconTheme: IconThemeData(color: Colors.black),
         backgroundColor: Colors.white,
         title: Text(
-          "Profile",
+          "Yousef profile",
           style: TextStyle(color: Colors.black),
         ),
         elevation: 0,
         centerTitle: true,
-        actions: [
-          IconButton(
-
-
-
-              icon: Icon(
-                Icons.search,
-                color: Colors.black,
-              ),
-              onPressed: () {
-                Navigator.pushNamed(context, 'search');
-              }),
-          IconButton(
-              icon: Icon(
-                Icons.messenger_outline,
-                color: Colors.black,
-              ),
-              onPressed: () {})
-        ],
       ),
       body: ListView(
         children: [
@@ -50,18 +29,6 @@ class _ProfileState extends State<Profile> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.fromLTRB(250, 10, 0, 0),
-                    child: RaisedButton(
-                        color: Colors.white70,
-                        child: Row(
-                          children: [
-                            Icon(
-                              Icons.edit_outlined,
-                              color: Colors.black,
-                            ),
-                            Text(" Edit Profile")
-                          ],
-                        ),
-                        onPressed: () {}),
                   )
                 ],
               ),
@@ -69,23 +36,75 @@ class _ProfileState extends State<Profile> {
                 height: 5,
               ),
               Center(
-                child: Container(
-                    child: GestureDetector(
-                  onTap: () {
-                    FocusScope.of(context).requestFocus(new FocusNode());
-                  },
-                  child: Center(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Expanded(flex: 1,child: Container(child: Text(""),)),
+                    Expanded(flex: 2,
                       child: Container(
-                          width: Device.width / 2.5,
-                          height: Device.height / 5,
-                          child: Padding(
-                            padding: const EdgeInsets.all(8.0),
-                            child: Image.network(
-                              'https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png',
-                              fit: BoxFit.cover,
+                          child: GestureDetector(
+                            onTap: () {
+                              FocusScope.of(context).requestFocus(new FocusNode());
+                            },
+                            child: Center(
+                                child: Container(
+                                    width: Device.width / 2.5,
+                                    height: Device.height / 5,
+                                    child: Padding(
+                                      padding: const EdgeInsets.all(8.0),
+                                      child: Image.network(
+                                        'https://cdn.business2community.com/wp-content/uploads/2017/08/blank-profile-picture-973460_640.png',
+                                        fit: BoxFit.cover,
+                                      ),
+                                    ))),
+                          )),
+                    ),
+
+                  Expanded(flex: 1,
+                    child: new  Column(children: [
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: GestureDetector(
+                            onTap: (){},
+                            child: Container(
+                              height: 50,
+                              width: 50,
+                              child: Icon(
+                                Icons.person_add_alt,
+                                color: Colors.green,
+                              ),
+                              decoration: new BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: new BorderRadius.all(
+                                    Radius.circular(10.0),
+                                  )),
                             ),
-                          ))),
-                )),
+                          ),
+                        ),
+                        Padding(
+                          padding: const EdgeInsets.all(8.0),
+                          child: GestureDetector(
+                            onTap: (){},
+                            child: Container(
+                              height: 50,
+                              width: 50,
+                              child: Icon(
+                                Icons.chat,
+                                color: Colors.white,
+                              ),
+                              decoration: new BoxDecoration(
+                                  color: Colors.lightGreen,
+                                  borderRadius: new BorderRadius.all(
+                                    Radius.circular(10.0),
+                                  )),
+                            ),
+                          ),
+                        ),
+                      ],),
+                  ),
+
+                  ],
+                ),
               ),
               SizedBox(
                 height: 10,
@@ -99,7 +118,7 @@ class _ProfileState extends State<Profile> {
                       Text(
                         'Ali Mohammad',
                         style:
-                            TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                        TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                       ),
                       SizedBox(
                         height: 5,
@@ -183,7 +202,7 @@ class _ProfileState extends State<Profile> {
                       padding: const EdgeInsets.all(8.0),
                       child: Text('My Skills\n',
                           style:
-                              TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
                     ),
                     SizedBox(
                       height: 20,
@@ -203,4 +222,5 @@ class _ProfileState extends State<Profile> {
       ),
     );
   }
-}
+  }
+

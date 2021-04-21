@@ -5,6 +5,7 @@ import 'package:hypercv/Helpers/Device.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:video_player/video_player.dart';
 
+import 'CV.dart';
 import 'Jobs.dart';
 import 'News.dart';
 import 'Profile.dart';
@@ -22,13 +23,14 @@ class _HomeState extends State<Home> {
   static List<Widget> _widgetOptions = <Widget>[
     News(),
     Jobs(),
-    Jobs(),
+    CV(),
     Profile(),
   ];
 
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
+      print(index);
     });
   }
 

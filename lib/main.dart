@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:hypercv/pages/About/index.dart';
 import 'package:hypercv/pages/About/settings.dart';
+import 'package:hypercv/pages/Home/Profile2.dart';
 import 'package:hypercv/pages/Home/addvideo.dart';
 import 'package:hypercv/pages/Home/index.dart';
 import 'package:hypercv/pages/Home/jobDetails.dart';
@@ -72,6 +73,7 @@ class myAppState extends State<MyApp> {
           'search': (BuildContext context) =>  search(),
           'settings': (BuildContext context) =>  settings(),
           'jobDetails': (BuildContext context) =>  JobDetails(),
+          'Profile2': (BuildContext context) =>  Profile2(),
 
         },
       );
