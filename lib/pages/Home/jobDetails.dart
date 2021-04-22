@@ -41,7 +41,11 @@ backgroundColor: Colors.white,      drawer: MyDrawer(),
                 Icons.messenger_outline,
                 color: Colors.black,
               ),
-              onPressed: () {})
+              onPressed: () {
+
+                Navigator.pushNamed(context, 'Message');
+
+              })
         ],
       ),
       body: ListView(

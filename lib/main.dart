@@ -14,6 +14,9 @@ import 'package:hypercv/pages/Join/index.dart';
 import 'package:hypercv/pages/Join/work.dart';
 import 'package:hypercv/pages/Landing/index.dart';
 import 'package:hypercv/pages/Login/index.dart';
+import 'package:hypercv/pages/Messages/NoMessage.dart';
+import 'package:hypercv/pages/Messages/index.dart';
+import 'package:hypercv/pages/Messages/old.dart';
 import 'package:hypercv/pages/introduction/index.dart';
 import 'package:hypercv/pages/nofollowers/follow.dart';
 import 'package:hypercv/pages/nofollowers/index.dart';
@@ -74,6 +77,10 @@ class myAppState extends State<MyApp> {
           'settings': (BuildContext context) =>  settings(),
           'jobDetails': (BuildContext context) =>  JobDetails(),
           'Profile2': (BuildContext context) =>  Profile2(),
+          'Message': (BuildContext context) =>  Message(),
+          'NoMessage': (BuildContext context) =>  NoMessage(),
+          'old': (BuildContext context) =>  old(),
+
 
         },
       );

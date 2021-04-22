@@ -39,7 +39,7 @@ class _ProfileState extends State<Profile> {
                 Icons.messenger_outline,
                 color: Colors.black,
               ),
-              onPressed: () {})
+              onPressed: () {    Navigator.pushNamed(context, 'Message');})
         ],
       ),
       body: ListView(
