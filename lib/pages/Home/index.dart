@@ -23,7 +23,7 @@ class _HomeState extends State<Home> {
   static List<Widget> _widgetOptions = <Widget>[
     News(),
     Jobs(),
-    Jobs(),
+    CV(),
     Profile(),
   ];
 
