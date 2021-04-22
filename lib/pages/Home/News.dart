@@ -12,6 +12,7 @@ class _NewsState extends State<News> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       drawer: MyDrawer(),
       appBar: AppBar(
         iconTheme: IconThemeData(color: Colors.black),
@@ -27,7 +28,11 @@ class _NewsState extends State<News> {
           Navigator.pushNamed(context, 'search');
 
 
-        }),IconButton(icon: Icon(Icons.messenger_outline,color: Colors.black,), onPressed: (){})],
+        }),IconButton(icon: Icon(Icons.messenger_outline,color: Colors.black,), onPressed: (){
+
+          Navigator.pushNamed(context, 'Message');
+
+        })],
       ),
       body: ListView(
         children: [
