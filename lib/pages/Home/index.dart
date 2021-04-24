@@ -18,8 +18,8 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
   int _selectedIndex = 0;
-  static const TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+  static  TextStyle optionStyle =
+      TextStyle(fontSize: Device.height * 0.32, fontWeight: FontWeight.bold);
   static List<Widget> _widgetOptions = <Widget>[
     News(),
     Jobs(),
@@ -83,7 +83,7 @@ class _HomeState extends State<Home> {
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontSize: Device.height * 0.03),
-                                ))),
+                                ).tr())),
                       ),
                       Container(
                         height: Device.height * 0.07,
@@ -95,7 +95,7 @@ class _HomeState extends State<Home> {
                             child: Text("welcome to hyper CV!",
                                 style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: Device.height * 0.028))),
+                                    fontSize: Device.height * 0.028)).tr()),
                       ),
                       Container(
                         height: Device.height * 0.07,
@@ -107,7 +107,7 @@ class _HomeState extends State<Home> {
                             child: Text("About hyper CV!",
                                 style: TextStyle(
                                     color: Colors.white,
-                                    fontSize: Device.height * 0.028))),
+                                    fontSize: Device.height * 0.028)).tr()),
                       ),
                       Container(
                         height: Device.height * 0.02,
@@ -117,7 +117,7 @@ class _HomeState extends State<Home> {
                           height: Device.height * 0.2,
                           width: Device.width * 0.8,
                           child: Padding(
-                            padding: const EdgeInsets.all(8.0),
+                            padding:  EdgeInsets.all(Device.height * 0.01),
                             child: Container(
                               height: Device.height / 3,
                               width: Device.width,

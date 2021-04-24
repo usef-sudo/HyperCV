@@ -62,7 +62,7 @@ class _LoginState extends State<Login> {
                   text: TextSpan(
                     children: <TextSpan>[
                       TextSpan(
-                          text: 'Appear your best to tell about yourself  ',
+                          text:(lang=='EN')? 'Appear your best to tell about yourself  ':"اظهر افضل ما لديك و تحدث عن نفسك",
                           style: TextStyle(
                             fontSize: Device.height*0.025,
                               color: Colors.grey,
@@ -98,7 +98,7 @@ class _LoginState extends State<Login> {
 
 
                       hintStyle: new TextStyle(color: Colors.grey[600]),
-                      hintText: "Email",
+                      hintText:(lang=='EN')? "Email":"البريد الالكتروني",
                       fillColor: Color.fromRGBO(238, 238, 255, 1)),
                 ),
               ),
@@ -126,7 +126,7 @@ class _LoginState extends State<Login> {
 
 
                       hintStyle: new TextStyle(color: Colors.grey[600]),
-                      hintText: "Password",
+                      hintText: (lang=='EN')? 'password':"كلمة السر",
                       fillColor: Color.fromRGBO(238, 238, 255, 1)),
                 ),
               ),
@@ -159,7 +159,7 @@ class _LoginState extends State<Login> {
                       ),
                       borderRadius: BorderRadius.all(
                           Radius.circular(20.0) //
-                      )),child: Center(child: Text("Sign In",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),))),
+                      )),child: Center(child: Text("Sign In",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),).tr())),
                 ),
                   ),
                 ),
@@ -172,12 +172,12 @@ class _LoginState extends State<Login> {
                   text: TextSpan(
                     children: <TextSpan>[
                       TextSpan(
-                          text: 'New User ?  ',
+                          text: (lang=='EN')? 'New User ?  ':"مستخدم جديد ؟",
                           style: TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.bold)),
                       TextSpan(
-                          text: ' SignUp Now !',
+                          text:(lang=='EN')?  ' SignUp Now !':" انشاء حساب",
                           style: TextStyle(
                               color: Colors.greenAccent,
                               fontWeight: FontWeight.bold),

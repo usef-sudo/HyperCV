@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hypercv/Helpers/Device.dart';
 import 'package:flutter_chips_input/flutter_chips_input.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class search extends StatefulWidget {
   @override
@@ -43,13 +44,13 @@ class _searchState extends State<search> {
           centerTitle: true,
           actions: [
             Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text("SKIP", style: TextStyle(color: Colors.black)),
+              padding:  EdgeInsets.all(Device.height * 0.01),
+              child: Text("SKIP", style: TextStyle(color: Colors.black)).tr(),
             )
           ],
           title: Text('Discover',
               style:
-              TextStyle(fontWeight: FontWeight.bold, color: Colors.black)),
+              TextStyle(fontWeight: FontWeight.bold, color: Colors.black)).tr(),
           elevation: 0,
           iconTheme: IconThemeData(color: Colors.black),
           backgroundColor: Colors.white),
@@ -70,7 +71,7 @@ class _searchState extends State<search> {
                 ),
               ),*/
                 Container(
-                  height: 15,
+                  height: Device.height * 0.02,
                 ),
                 Padding(
                   padding:  EdgeInsets.fromLTRB(Device.width*0.1,0,Device.width*0.1,0),
@@ -101,7 +102,7 @@ class _searchState extends State<search> {
 
                 // the tab bar with two items
                 SizedBox(
-                  height: 50,
+                  height: Device.height * 0.055,
                   child: AppBar(
                     elevation: 0,
                     backgroundColor: Colors.white,
@@ -187,7 +188,7 @@ Widget CardBuilder(List<String> ll) {
                           "Ali Mohammad",
                           style: TextStyle(
                               color: Colors.white,
-                              fontSize: 25,
+                              fontSize: Device.height * 0.03,
                               fontWeight: FontWeight.bold),
                         ),
                         subtitle: Text(
@@ -196,12 +197,12 @@ Widget CardBuilder(List<String> ll) {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(12.0),
+                        padding:  EdgeInsets.all(Device.height * 0.014),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding:  EdgeInsets.all(Device.height * 0.01),
                               child: Card(
                                   child: GestureDetector(
                                     onTap: (){
@@ -213,21 +214,22 @@ Widget CardBuilder(List<String> ll) {
                                           borderRadius: new BorderRadius.all(
                                             Radius.circular(70.0),
                                           )),
-                                      width: 140,
-                                      height: 50,
+                                      width: Device.height * 0.15,
+                                      height: Device.height * 0.055,
                                       child: Center(
                                           child: Text(
                                             "See Portfolio",
                                             style: TextStyle(fontWeight: FontWeight.bold),
-                                          )),
+                                          ).tr()),
                                     ),
                                   )),
                             ),
                             Padding(
                               padding: const EdgeInsets.all(8.0),
                               child: Container(
-                                height: 50,
-                                width: 50,
+                                height: Device.height * 0.055,
+                                width: Device.height * 0.055,
+
                                 child: Icon(
                                   Icons.messenger,
                                   color: Colors.grey,

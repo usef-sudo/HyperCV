@@ -3,13 +3,24 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:hypercv/Helpers/Device.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 class Landing extends StatefulWidget {
   @override
   _LandingState createState() => _LandingState();
 }
 
 class _LandingState extends State<Landing> {
-
+  String lang = 'AR';
+  @override
+  void initState() {
+    SharedPreferences.getInstance().then((SharedPreferences sp) async {
+      setState(() {
+        lang = sp.getString('lang') ?? 'EN';
+      });
+    });
+    // TODO: implement initState
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -42,7 +53,7 @@ class _LandingState extends State<Landing> {
                   text: TextSpan(
                     children: <TextSpan>[
                       TextSpan(
-                          text: 'Appear your best to tell about yourself  ',
+                          text: (lang=='EN')? 'Appear your best to tell about yourself  ':"اظهر افضل ما لديك و تحدث عن نفسك",
                           style: TextStyle(
                               fontSize: Device.height * 0.025,
                               color: Colors.grey,
@@ -74,13 +85,13 @@ class _LandingState extends State<Landing> {
                               mainAxisAlignment:
                               MainAxisAlignment.spaceBetween,
                               children: [
-                                Icon(Icons.email, size: 35,),
+                                Icon(Icons.email, size: Device.height * 0.04,),
                                 Text(
                                   "LogIn with Email",
                                   style: TextStyle(
                                       color: Colors.black,
                                       fontWeight: FontWeight.bold),
-                                ),
+                                ).tr(),
                                 Container(
                                     decoration: BoxDecoration(
                                       color: Colors.black,
@@ -138,7 +149,7 @@ class _LandingState extends State<Landing> {
                                   style: TextStyle(
                                       color: Colors.black,
                                       fontWeight: FontWeight.bold),
-                                ),
+                                ).tr(),
                                 Container(
                                     decoration: BoxDecoration(
                                       color: Colors.black,
@@ -196,7 +207,7 @@ class _LandingState extends State<Landing> {
                                   style: TextStyle(
                                       color: Colors.black,
                                       fontWeight: FontWeight.bold),
-                                ),
+                                ).tr(),
                                 Container(
                                     decoration: BoxDecoration(
                                       color: Colors.black,
@@ -253,7 +264,7 @@ class _LandingState extends State<Landing> {
                                   style: TextStyle(
                                       color: Colors.black,
                                       fontWeight: FontWeight.bold),
-                                ),
+                                ).tr(),
                                 Container(
                                     decoration: BoxDecoration(
                                       color: Colors.black,
@@ -278,11 +289,9 @@ class _LandingState extends State<Landing> {
                 ),
               ),
               SizedBox(
-                height: Device.height * 0.02,
+                height: Device.height * 0.04,
               ),
-              Container(
-                height: Device.height * 0.02,
-              ),
+
               InkWell(
                 onTap: () {
                   Device.welcome=true;
@@ -299,7 +308,7 @@ class _LandingState extends State<Landing> {
                           Radius.circular(20.0),
                         )),
                     child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding:  EdgeInsets.all(Device.height * 0.01),
                       child: Container(
                           decoration: BoxDecoration(
                               border: Border.all(

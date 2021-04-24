@@ -1,6 +1,6 @@
 import 'dart:io';
 import 'package:path/path.dart' as p;
-
+import 'package:easy_localization/easy_localization.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:hypercv/Helpers/Device.dart';
@@ -8,10 +8,13 @@ import 'package:hypercv/Helpers/Device.dart';
 class certification extends StatefulWidget {
   @override
   _certificationState createState() => _certificationState();
+
 }
 
 class _certificationState extends State<certification> {
+
   File _certification;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,7 +26,6 @@ class _certificationState extends State<certification> {
               ),
               child: InkWell(
                 onTap: () {
-
                   Navigator.pop(context);
                 },
                 child: Container(
@@ -39,8 +41,8 @@ class _certificationState extends State<certification> {
             centerTitle: true,
             actions: [
               Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text("SKIP", style: TextStyle(color: Colors.black)),
+                padding:  EdgeInsets.all( Device.height * 0.01),
+                child: Text("SKIP", style: TextStyle(color: Colors.black)).tr(),
               )
             ],
             title: Text('',
@@ -55,11 +57,11 @@ class _certificationState extends State<certification> {
                 child: Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
-                    "ADD Certification ",
+                    "ADD Certification",
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: Device.height * 0.03),
-                  ),
+                  ).tr(),
                 ),
               ),
 
@@ -86,15 +88,17 @@ class _certificationState extends State<certification> {
                               children: [
                                 Icon(
                                   Icons.date_range,
-                                  size: 35,
+                                  size: Device.height * 0.03,
                                   color: Colors.green,
-                                ),
+                                    ),
                                 Text(
-                                  ":",
+                                   ":",
                                   style: TextStyle(
-                                    fontSize: 30, fontWeight: FontWeight.bold,color: Colors.green,),
-                                ),
-                              ],
+                                    fontSize:  Device.height * 0.03,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.green,),
+                                    ),
+                                        ],
                             ),
                             Container(
                                 width:  Device.width * 0.6,
@@ -143,8 +147,9 @@ class _certificationState extends State<certification> {
                                 Text(
                                   "Place :",
                                   style: TextStyle(
+                                    fontSize: Device.height * 0.03,
                                       fontWeight: FontWeight.bold),
-                                ),
+                                ).tr(),
                               ],
                             ),
                             Container(
@@ -181,8 +186,11 @@ class _certificationState extends State<certification> {
                   child: Padding(
                     padding: EdgeInsets.all(Device.height * 0.012),
                     child: Container(
+
                         width: Device.width * 0.6,
+
                         height: Device.height * 0.07,
+
                         child: Row(
                           children: [
                             Row(
@@ -194,8 +202,9 @@ class _certificationState extends State<certification> {
                                 Text(
                                   "Course :",
                                   style: TextStyle(
+                                    fontSize: Device.height * 0.03,
                                       fontWeight: FontWeight.bold),
-                                ),
+                                ).tr(),
                               ],
                             ),
                             Container(
@@ -256,7 +265,7 @@ class _certificationState extends State<certification> {
                                       ])),
 
                             ],
-                          ):Container(child: Text("Attach File"),),
+                          ):Container(child: Text("Attach File").tr(),),
                           (_certification!=null) ? IconButton(icon: Icon(Icons.clear), onPressed: (){setState(() {
                             _certification=null;
                           });}): IconButton(icon: Icon(Icons.attach_file), onPressed: (){addfile();})
@@ -282,7 +291,7 @@ class _certificationState extends State<certification> {
                           Radius.circular(20.0),
                         )),
                     child: Padding(
-                      padding: const EdgeInsets.all(8.0),
+                      padding:  EdgeInsets.all( Device.height * 0.01),
                       child: Container(
                           decoration: BoxDecoration(
                               border:
@@ -295,7 +304,7 @@ class _certificationState extends State<certification> {
                                 "Add Certification",
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold, color: Colors.white),
-                              ))),
+                              ).tr())),
                     ),
                   ),
                 ),
@@ -323,7 +332,7 @@ class _certificationState extends State<certification> {
                               "Cancel",
                               style: TextStyle(
                                   fontWeight: FontWeight.bold, color: Colors.grey),
-                            ))),
+                            ).tr())),
                   ),
                 ),
               ),

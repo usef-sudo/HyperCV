@@ -64,12 +64,12 @@ class _SignupState extends State<Signup> {
                   text: TextSpan(
                     children: <TextSpan>[
                       TextSpan(
-                          text: 'By Signing Up you agree to the  ',
+                          text: (lang=='EN')? 'By Signing Up you agree to the  ':"بالتسجيل انت تتفق مع ",
                           style: TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.bold)),
                       TextSpan(
-                          text: ' Terms of Service',
+                          text: (lang=='EN')? ' Terms of Service':"قوانين الخدمات",
                           style: TextStyle(
                               color: Colors.greenAccent,
                               fontWeight: FontWeight.bold),
@@ -106,7 +106,7 @@ class _SignupState extends State<Signup> {
 
 
                       hintStyle: new TextStyle(color: Colors.grey[600]),
-                      hintText: "Full Name",
+                      hintText: (lang=='EN')? "Full Name":"الاسم كامل",
                       fillColor: Color.fromRGBO(238, 238, 255, 1)),
 
                 ),
@@ -134,7 +134,7 @@ class _SignupState extends State<Signup> {
 
 
                       hintStyle: new TextStyle(color: Colors.grey[600]),
-                      hintText: "Email",
+                      hintText:(lang=='EN')? 'Email':"البريد الالكتروني",
                       fillColor: Color.fromRGBO(238, 238, 255, 1)),
                 ),
               ),
@@ -162,7 +162,7 @@ class _SignupState extends State<Signup> {
 
 
                       hintStyle: new TextStyle(color: Colors.grey[600]),
-                      hintText: "Password",
+                      hintText: (lang=='EN')? 'password':"كلمة السر",
                       fillColor: Color.fromRGBO(238, 238, 255, 1)),
                 ),
               ),
@@ -190,7 +190,7 @@ class _SignupState extends State<Signup> {
 
 
                       hintStyle: new TextStyle(color: Colors.grey[600]),
-                      hintText: "ADD Location",
+                      hintText:(lang=='EN')? 'ADD Location':"اضافة موقع",
                       fillColor: Color.fromRGBO(238, 238, 255, 1)),
                 ),
               ),
@@ -221,7 +221,7 @@ class _SignupState extends State<Signup> {
                           ),
                           borderRadius: BorderRadius.all(
                               Radius.circular(20.0) //
-                          )),child: Center(child: Text("JOIN",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),))),
+                          )),child: Center(child: Text("JOIN",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),).tr())),
                     ),
                   ),
                 ),
@@ -234,12 +234,12 @@ class _SignupState extends State<Signup> {
                   text: TextSpan(
                     children: <TextSpan>[
                       TextSpan(
-                          text: 'Already User?  ',
+                          text:(lang=='EN')? 'Already User? ':"لديك حساب ؟",
                           style: TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.bold)),
                       TextSpan(
-                          text: ' LogIn Now!',
+                          text: (lang=='EN')?' LogIn Now!':"سجل الان ",
                           style: TextStyle(
                               color: Colors.greenAccent,
                               fontWeight: FontWeight.bold),

@@ -75,7 +75,7 @@ String Lang = 'EN';
                   width: Device.width /1.2,
                   height: Device.height/2,
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding:  EdgeInsets.all(Device.height * 0.01,),
                     child: Image.asset('lib/assets/download.png',fit: BoxFit.cover,),
                   )
                 )),

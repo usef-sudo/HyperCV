@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hypercv/Helpers/Device.dart';
 import 'package:flutter_chips_input/flutter_chips_input.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class follow extends StatefulWidget {
   @override
@@ -44,13 +45,13 @@ class _followState extends State<follow> {
           centerTitle: true,
           actions: [
             Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text("SKIP", style: TextStyle(color: Colors.black)),
+              padding:  EdgeInsets.all(Device.height * 0.01),
+              child: Text("SKIP", style: TextStyle(color: Colors.black)).tr(),
             )
           ],
           title: Text('Follow people',
               style:
-                  TextStyle(fontWeight: FontWeight.bold, color: Colors.black)),
+                  TextStyle(fontWeight: FontWeight.bold, color: Colors.black)).tr(),
           elevation: 0,
           iconTheme: IconThemeData(color: Colors.black),
           backgroundColor: Colors.white),
@@ -71,7 +72,7 @@ class _followState extends State<follow> {
                 ),
               ),*/
                 Container(
-                  height: 15,
+                  height: Device.height * 0.018,
                 ),
                 InkWell(
                   onTap: () {
@@ -87,7 +88,7 @@ class _followState extends State<follow> {
                             Radius.circular(20.0),
                           )),
                       child: Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding:  EdgeInsets.all(Device.height * 0.01),
                         child: Container(
                             decoration: BoxDecoration(
                                 border: Border.all(
@@ -101,18 +102,18 @@ class _followState extends State<follow> {
                               style: TextStyle(
                                   fontWeight: FontWeight.bold,
                                   color: Colors.white),
-                            ))),
+                            ).tr())),
                       ),
                     ),
                   ),
                 ),
                 Container(
-                  height: 15,
+                  height: Device.height * 0.018,
                 ),
 
                 // the tab bar with two items
                 SizedBox(
-                  height: 50,
+                  height: Device.height * 0.055,
                   child: AppBar(
                     elevation: 0,
                     backgroundColor: Colors.white,
@@ -198,7 +199,7 @@ Widget CardBuilder(List<String> ll) {
                           "Ali Mohammad",
                           style: TextStyle(
                               color: Colors.white,
-                              fontSize: 25,
+                              fontSize: Device.height * 0.03,
                               fontWeight: FontWeight.bold),
                         ),
                         subtitle: Text(
@@ -207,12 +208,12 @@ Widget CardBuilder(List<String> ll) {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(12.0),
+                        padding:  EdgeInsets.all(Device.height * 0.012),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
                             Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding:  EdgeInsets.all(Device.height * 0.01),
                               child: Card(
                                   child: GestureDetector(
                                     onTap: (){
@@ -224,21 +225,21 @@ Widget CardBuilder(List<String> ll) {
                                       borderRadius: new BorderRadius.all(
                                         Radius.circular(70.0),
                                       )),
-                                width: 140,
-                                height: 50,
+                                width: Device.height * 0.15,
+                                height: Device.height * 0.055,
                                 child: Center(
                                       child: Text(
                                     "See Portfolio",
                                     style: TextStyle(fontWeight: FontWeight.bold),
-                                )),
+                                ).tr()),
                               ),
                                   )),
                             ),
                             Padding(
-                              padding: const EdgeInsets.all(8.0),
+                              padding:  EdgeInsets.all(Device.height * 0.01),
                               child: Container(
-                                height: 50,
-                                width: 50,
+                                height: Device.height * 0.055,
+                                width: Device.height * 0.055,
                                 child: Icon(
                                   Icons.person_add_alt,
                                   color: Colors.green,

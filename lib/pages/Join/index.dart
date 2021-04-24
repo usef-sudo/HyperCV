@@ -4,6 +4,7 @@ import 'package:google_maps_place_picker/google_maps_place_picker.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:hypercv/pages/Join/AddCV.dart';
 import 'package:path/path.dart' as p;
+import 'package:easy_localization/easy_localization.dart';
 
 class Join extends StatefulWidget {
   @override
@@ -41,19 +42,19 @@ class _JoinState extends State<Join> {
           centerTitle: true,
           title: Text('Complete Profile',
               style:
-                  TextStyle(fontWeight: FontWeight.bold, color: Colors.black)),
+                  TextStyle(fontWeight: FontWeight.bold, color: Colors.black)).tr(),
           elevation: 0,
           iconTheme: IconThemeData(color: Colors.black),
           backgroundColor: Colors.white),
       body: ListView(
         children: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding:  EdgeInsets.all(Device.height * 0.01),
             child: Text(
               "Location",
               style: TextStyle(
                   fontWeight: FontWeight.bold, fontSize: Device.height * 0.03),
-            ),
+            ).tr(),
           ),
           Padding(
             padding: EdgeInsets.fromLTRB(
@@ -75,12 +76,12 @@ class _JoinState extends State<Join> {
                           children: [
                             Icon(
                               Icons.location_on,
-                              size: 35,
+                              size: Device.height * 0.03,
                             ),
                             Text(
                               ":",
                               style: TextStyle(
-                                  fontSize: 30, fontWeight: FontWeight.bold),
+                                  fontSize: Device.height * 0.03, fontWeight: FontWeight.bold),
                             ),
 
                             Text(selectedPlace.formattedAddress ??
@@ -155,16 +156,16 @@ class _JoinState extends State<Join> {
                                                   children: [
                                                     Icon(
                                                       Icons.location_on,
-                                                      size: 35,
+                                                      size: Device.height * 0.03,
                                                     ),
                                                     Text(
                                                       ":",
                                                       style: TextStyle(
-                                                          fontSize: 30, fontWeight: FontWeight.bold),
+                                                          fontSize: Device.height * 0.03, fontWeight: FontWeight.bold),
                                                     ),
 
                                                     Container(
-                                                      width: 100,
+                                                      width: Device.height * 0.1,
                                                       child: Text(selectedPlace.formattedAddress ??
                                                           "Amman,Jordan",
                                                         style: TextStyle(
@@ -178,7 +179,7 @@ class _JoinState extends State<Join> {
                                     ),
                                   ),
                                   Padding(
-                                    padding: const EdgeInsets.all(18.0),
+                                    padding:  EdgeInsets.all(Device.height * 0.02),
                                     child: InkWell(
                                       onTap: (){print("do something with [selectedPlace] data");
                                       Navigator.of(context).pop();},
@@ -192,7 +193,7 @@ class _JoinState extends State<Join> {
                                                 Radius.circular(20.0),
                                               )),
                                           child: Padding(
-                                            padding: const EdgeInsets.all(8.0),
+                                            padding:  EdgeInsets.all(Device.height * 0.01),
                                             child: Container(
                                                 decoration: BoxDecoration(
                                                     border:
@@ -205,7 +206,7 @@ class _JoinState extends State<Join> {
                                                       "Add Location",
                                                       style: TextStyle(
                                                           fontWeight: FontWeight.bold, color: Colors.white),
-                                                    ))),
+                                                    ).tr())),
                                           ),
                                         ),
                                       ),
@@ -246,7 +247,7 @@ class _JoinState extends State<Join> {
                       Radius.circular(20.0),
                     )),
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding:  EdgeInsets.all(Device.height * 0.01),
                   child: Container(
                       decoration: BoxDecoration(
                           border:
@@ -259,7 +260,7 @@ class _JoinState extends State<Join> {
                         "Add Location",
                         style: TextStyle(
                             fontWeight: FontWeight.bold, color: Colors.white),
-                      ))),
+                      ).tr())),
                 ),
               ),
             ),
@@ -268,12 +269,12 @@ class _JoinState extends State<Join> {
             height: Device.height * 0.02,
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding:  EdgeInsets.all(Device.height * 0.01),
             child: Text(
               "Video C.V",
               style: TextStyle(
                   fontWeight: FontWeight.bold, fontSize: Device.height * 0.03),
-            ),
+            ).tr(),
           ),
           Padding(
             padding: EdgeInsets.fromLTRB(
@@ -309,7 +310,7 @@ class _JoinState extends State<Join> {
                               ],
                             ):Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Text("None",style: TextStyle(fontWeight: FontWeight.bold),),
+                              child: Text("None",style: TextStyle(fontWeight: FontWeight.bold),).tr(),
                             ),
                             Container(
                                 decoration: BoxDecoration(
@@ -352,7 +353,7 @@ class _JoinState extends State<Join> {
                       Radius.circular(20.0),
                     )),
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding:  EdgeInsets.all(Device.height * 0.01),
                   child: Container(
                       decoration: BoxDecoration(
                           border:
@@ -365,7 +366,7 @@ class _JoinState extends State<Join> {
                         "Add Vedieo CV",
                         style: TextStyle(
                             fontWeight: FontWeight.bold, color: Colors.white),
-                      ))),
+                      ).tr())),
                 ),
               ),
             ),
@@ -379,7 +380,7 @@ class _JoinState extends State<Join> {
               "Qalifications",
               style: TextStyle(
                   fontWeight: FontWeight.bold, fontSize: Device.height * 0.03),
-            ),
+            ).tr(),
           ),
           InkWell(
             onTap: () {
@@ -409,7 +410,7 @@ class _JoinState extends State<Join> {
                         "Add Qalifications",
                         style: TextStyle(
                             fontWeight: FontWeight.bold, color: Colors.white),
-                      ))),
+                      ).tr())),
                 ),
               ),
             ),
@@ -445,7 +446,7 @@ class _JoinState extends State<Join> {
                         "JOIN",
                         style: TextStyle(
                             fontWeight: FontWeight.bold, color: Colors.white),
-                      ))),
+                      ).tr())),
                 ),
               ),
             ),

@@ -1,5 +1,6 @@
 import 'dart:io';
 import 'package:path/path.dart' as p;
+import 'package:easy_localization/easy_localization.dart';
 
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
@@ -39,8 +40,8 @@ class _educationState extends State<education> {
             centerTitle: true,
             actions: [
               Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Text("SKIP", style: TextStyle(color: Colors.black)),
+                padding:  EdgeInsets.all(Device.height * 0.01),
+                child: Text("SKIP", style: TextStyle(color: Colors.black)).tr(),
               )
             ],
             title: Text('',
@@ -53,13 +54,13 @@ class _educationState extends State<education> {
             children: [
               Center(
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding:  EdgeInsets.all(Device.height * 0.01),
                   child: Text(
-                    "ADD Education ",
+                    "ADD Education",
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: Device.height * 0.03),
-                  ),
+                  ).tr(),
                 ),
               ),
 
@@ -86,13 +87,13 @@ class _educationState extends State<education> {
                               children: [
                                 Icon(
                                   Icons.date_range,
-                                  size: 35,
+                                  size: Device.height * 0.03,
                                   color: Colors.green,
                                 ),
                                 Text(
                                   ":",
                                   style: TextStyle(
-                                      fontSize: 30, fontWeight: FontWeight.bold,color: Colors.green,),
+                                      fontSize: Device.height * 0.03, fontWeight: FontWeight.bold,color: Colors.green,),
                                 ),
                               ],
                             ),
@@ -144,7 +145,7 @@ class _educationState extends State<education> {
                                   "Place :",
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold),
-                                ),
+                                ).tr(),
                               ],
                             ),
                             Container(
@@ -195,7 +196,7 @@ class _educationState extends State<education> {
                                   "Title :",
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold),
-                                ),
+                                ).tr(),
                               ],
                             ),
                             Container(
@@ -255,7 +256,7 @@ class _educationState extends State<education> {
                                       ])),
 
                             ],
-                          ):Container(child: Text("Attach File"),),
+                          ):Container(child: Text("Attach File").tr(),),
                           (_certification!=null) ? IconButton(icon: Icon(Icons.clear), onPressed: (){setState(() {
                             _certification=null;
                           });}): IconButton(icon: Icon(Icons.attach_file), onPressed: (){addfile();})
@@ -295,7 +296,7 @@ class _educationState extends State<education> {
                                 "Add Education",
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold, color: Colors.white),
-                              ))),
+                              ).tr())),
                     ),
                   ),
                 ),
@@ -323,7 +324,7 @@ class _educationState extends State<education> {
                               "Cancel",
                               style: TextStyle(
                                   fontWeight: FontWeight.bold, color: Colors.grey),
-                            ))),
+                            ).tr())),
                   ),
                 ),
               ),

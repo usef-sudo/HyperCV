@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hypercv/Helpers/Device.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class MyDrawer extends StatefulWidget {
   @override
@@ -31,12 +32,12 @@ class _MyDrawerState extends State<MyDrawer> {
                     style: TextStyle(
                         color: Colors.green,
                         decoration: TextDecoration.underline),
-                  ),
+                  ).tr(),
             onTap: (){                      Navigator.pop(context);
             },
                 )
               : ListTile(
-                  title: Text("Home"),
+                  title: Text("Home").tr(),
                   onTap: () {
                     setState(() {
                       Device.drawerIndex = 0;
@@ -51,7 +52,7 @@ class _MyDrawerState extends State<MyDrawer> {
                     style: TextStyle(
                         color: Colors.green,
                         decoration: TextDecoration.underline),
-                  ),
+                  ).tr(),
             onTap: (){
 
                     Navigator.pop(context);
@@ -60,7 +61,7 @@ class _MyDrawerState extends State<MyDrawer> {
             },
                 )
               : ListTile(
-                  title: Text("Settings"),
+                  title: Text("Settings").tr(),
             onTap: () {
               setState(() {
                 Device.drawerIndex = 1;
@@ -76,14 +77,14 @@ class _MyDrawerState extends State<MyDrawer> {
                     style: TextStyle(
                         color: Colors.green,
                         decoration: TextDecoration.underline),
-                  ),
+                  ).tr(),
 onTap: (){
   Navigator.pop(context);
   Navigator.pushNamed(context, "About");
 },
                 )
               : ListTile(
-                  title: Text("About Hyper CV"),
+                  title: Text("About Hyper CV").tr(),
             onTap: () {
               setState(() {
                 Device.drawerIndex = 2;
@@ -100,16 +101,17 @@ onTap: (){
                     style: TextStyle(
                         color: Colors.green,
                         decoration: TextDecoration.underline),
-                  ),
+                  ).tr(),
                 )
               : ListTile(
-                  title: Text("LogOut"),
+                  title: Text("LogOut").tr(),
             onTap: () {
               Navigator.pop(context);
 
               setState(() {
                 Device.drawerIndex = 3;
               });
+              Navigator.pushReplacementNamed(context, 'Login');
             },
                 ),
         ],

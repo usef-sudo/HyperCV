@@ -7,7 +7,8 @@ class introduction extends StatefulWidget {
   @override
   _introductionState createState() => _introductionState();
 }
-String dropdownValue = '';
+
+String dropdownValue = 'English';
 
 class _introductionState extends State<introduction> {
   @override
@@ -79,8 +80,8 @@ class _introductionState extends State<introduction> {
             InkWell(
               onTap: () {
 //todo must sign user using ali api
-              if(dropdownValue!='')
-                Navigator.pushNamed(context, 'Landing');
+                if (dropdownValue != '')
+                  Navigator.pushNamed(context, 'Landing');
               },
               child: Center(
                 child: Container(
@@ -130,7 +131,6 @@ class MyStatefulWidget extends StatefulWidget {
 
 /// This is the private State class that goes with MyStatefulWidget.
 class _MyStatefulWidgetState extends State<MyStatefulWidget> {
-
   @override
   Widget build(BuildContext context) {
     return DropdownButton<String>(
@@ -148,26 +148,26 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           dropdownValue = newValue;
         });
         SharedPreferences.getInstance().then((SharedPreferences sp) {
-          if (dropdownValue == "Arabic") {
+          if (dropdownValue == "English") {
+            setState(() {
+              sp.setString('Lang', 'EN');
+              sp.setBool('auth', true);
+              //  context.locale = Locale('en', 'JO');
+
+              EasyLocalization.of(context).setLocale(Locale("en", "JO"));
+            });
+          } else {
             setState(() {
               sp.setString('Lang', 'AR');
-            //  context.locale = Locale('ar', 'JO');
+              //  context.locale = Locale('ar', 'JO');
               sp.setBool('auth', true);
 
               EasyLocalization.of(context).setLocale(Locale("ar", "JO"));
             });
-          } else {
-            setState(() {
-              sp.setString('Lang', 'EN');
-              sp.setBool('auth', true);
-            //  context.locale = Locale('en', 'JO');
-
-              EasyLocalization.of(context).setLocale(Locale("en", "JO"));
-            });
           }
         });
       },
-      items: <String>['','English', 'Arabic']
+      items: <String>['English', 'عربية']
           .map<DropdownMenuItem<String>>((String value) {
         return DropdownMenuItem<String>(
           value: value,

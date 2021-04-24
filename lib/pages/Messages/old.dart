@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hypercv/Helpers/Device.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class old extends StatefulWidget {
   @override
@@ -13,10 +14,10 @@ class _oldState extends State<old> {
       backgroundColor: Colors.white,
       appBar: AppBar(      iconTheme: IconThemeData(color: Colors.black),
 
-        backgroundColor: Colors.white,title: Text("Messages",style: TextStyle(color: Colors.black),),elevation: 0,centerTitle: true,
+        backgroundColor: Colors.white,title: Text("Messages",style: TextStyle(color: Colors.black),).tr(),elevation: 0,centerTitle: true,
         actions: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding:  EdgeInsets.all(Device.height * 0.01),
             child: Icon(Icons.search),
           )
         ],
@@ -39,8 +40,8 @@ class _oldState extends State<old> {
       body: ListView(
         children: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text("Select a person to message",style: TextStyle(fontWeight: FontWeight.bold),),
+            padding:  EdgeInsets.all(Device.height * 0.01),
+            child: Text("Select a person to message",style: TextStyle(fontWeight: FontWeight.bold),).tr(),
           ),
           Expanded(child: ListView.builder(
             shrinkWrap: true,
@@ -69,7 +70,7 @@ class _oldState extends State<old> {
                                 trailing: Text("20 seconds ago"),
                                 leading: Padding(
 
-                                  padding: const EdgeInsets.all(8.0),
+                                  padding:  EdgeInsets.all(Device.height * 0.01),
                                   child: CircleAvatar(
                                     backgroundColor: Colors.white,
 

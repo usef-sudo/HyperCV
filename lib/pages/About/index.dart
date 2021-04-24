@@ -31,6 +31,7 @@ class _AboutState extends State<About> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
           leading: Padding(
             padding: EdgeInsets.all(
@@ -41,7 +42,7 @@ class _AboutState extends State<About> {
                   decoration: BoxDecoration(
                     border: Border.all(width: 1.0),
                     borderRadius: BorderRadius.all(Radius.circular(
-                        30.0) //                 <--- border radius here
+                        Device.height*0.032) //                 <--- border radius here
                     ),
                   ),
                   child: Icon(Icons.arrow_back)),
@@ -57,8 +58,8 @@ class _AboutState extends State<About> {
           padding:  EdgeInsets.all(Device.height*0.02),
           child: Column(children: [
 Padding(
-  padding: const EdgeInsets.all(8.0),
-  child:   Container(height: 200,width: Device.width,child:AspectRatio(
+  padding:  EdgeInsets.all(Device.height*0.02),
+  child:   Container(height: Device.height*0.3,width: Device.width,child:AspectRatio(
     aspectRatio: _controller.value.aspectRatio,
     // Use the VideoPlayer widget to display the video.
     child: VideoPlayer(_controller),

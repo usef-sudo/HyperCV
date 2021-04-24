@@ -1,6 +1,6 @@
 import 'dart:io';
 import 'package:path/path.dart' as p;
-
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:hypercv/Helpers/Device.dart';
 import 'package:file_picker/file_picker.dart';
@@ -44,8 +44,8 @@ class _AddCVState extends State<AddCV> {
           centerTitle: true,
           actions: [
             Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text("SKIP", style: TextStyle(color: Colors.black)),
+              padding:  EdgeInsets.all( Device.height * 0.01),
+              child: Text("SKIP", style: TextStyle(color: Colors.black)).tr(),
             )
           ],
           title: Text('',
@@ -58,13 +58,13 @@ class _AddCVState extends State<AddCV> {
         children: [
           Center(
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding:  EdgeInsets.all( Device.height * 0.01),
               child: Text(
                 "ADD Video CV ",
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: Device.height * 0.03),
-              ),
+              ).tr(),
             ),
           ),
           Padding(
@@ -99,7 +99,7 @@ class _AddCVState extends State<AddCV> {
                                 ],
                               )
                             : Container(
-                                child: Text("Attach MP4"),
+                                child: Text("Attach MP4").tr(),
                               ),
                         (AddCV.CVV != null)
                             ? IconButton(
@@ -133,26 +133,28 @@ class _AddCVState extends State<AddCV> {
           ),
           Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding:  EdgeInsets.all( Device.height * 0.01),
               child: Text(
                 "Describe your video",
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: Device.height * 0.02),
-              ),
+              ).tr(),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding:  EdgeInsets.all(Device.height * 0.01),
               child: InkWell(
                 onTap: () {
                   if (AddCV.CVV == null) {
                   } else {
                     showDialog(
                         context: context,
-                        builder: (_) => new AlertDialog(
+                        builder: (_) => new StatefulBuilder(
+    builder: (context, setState) {
+    return  AlertDialog(
                               title: new Container(
-                                height: 200,
-                                width: 200,
+                                height: Device.height*0.3,
+                                width: Device.height*0.3,
                                 child: AspectRatio(
 
                                   aspectRatio: _controller.value.aspectRatio,
@@ -162,13 +164,13 @@ class _AddCVState extends State<AddCV> {
                               ),
                               actions: <Widget>[
                                 FlatButton(
-                                  child: Text('Back'),
+                                  child: Text('Back').tr(),
                                   onPressed: () {
                                     Navigator.of(context).pop();
                                   },
                                 ),
                                 FlatButton(
-                                  child: Text('Play/Pause'),
+                                  child: Icon((_controller.value.isPlaying)?Icons.pause_circle_filled:Icons.play_circle_fill),
                                   onPressed: () {
                                     print(_controller.dataSource);
                                     // Wrap the play or pause in a call to `setState`. This ensures the
@@ -185,7 +187,7 @@ class _AddCVState extends State<AddCV> {
                                   },
                                 ),
                               ],
-                            ));
+                            );}));
                   }
                 },
                 child: Text(
@@ -193,12 +195,12 @@ class _AddCVState extends State<AddCV> {
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: Device.height * 0.02),
-                ),
+                ).tr(),
               ),
             ),
           ]),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding:  EdgeInsets.all( Device.height * 0.01),
             child: Card(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20.0),
@@ -206,7 +208,7 @@ class _AddCVState extends State<AddCV> {
                 elevation: 0,
                 color: Color.fromRGBO(238, 238, 255, 1),
                 child: Padding(
-                  padding: EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all( Device.height * 0.01),
                   child: TextFormField(
                     // onChanged: (val) => _description = val,
                     maxLines: 5,
@@ -219,13 +221,13 @@ class _AddCVState extends State<AddCV> {
           ),
           Center(
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding:  EdgeInsets.all( Device.height * 0.01),
               child: Text(
                 "Add Reference Images",
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: Device.height * 0.03),
-              ),
+              ).tr(),
             ),
           ),
           Container(
@@ -328,15 +330,15 @@ class _AddCVState extends State<AddCV> {
             height: Device.height * 0.02,
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding:  EdgeInsets.all( Device.height * 0.01),
             child: Text(
               "About you",
               style: TextStyle(
                   fontWeight: FontWeight.bold, fontSize: Device.height * 0.02),
-            ),
+            ).tr(),
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding:  EdgeInsets.all( Device.height * 0.01),
             child: Card(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20.0),
@@ -344,7 +346,7 @@ class _AddCVState extends State<AddCV> {
                 elevation: 0,
                 color: Color.fromRGBO(238, 238, 255, 1),
                 child: Padding(
-                  padding: EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all( Device.height * 0.01),
                   child: TextFormField(
                     // onChanged: (val) => _description = val,
                     maxLines: 5,
@@ -370,7 +372,7 @@ class _AddCVState extends State<AddCV> {
                       Radius.circular(20.0),
                     )),
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding:  EdgeInsets.all( Device.height * 0.01),
                   child: Container(
                       decoration: BoxDecoration(
                           border:
@@ -383,7 +385,7 @@ class _AddCVState extends State<AddCV> {
                         "Add Vedieo CV",
                         style: TextStyle(
                             fontWeight: FontWeight.bold, color: Colors.white),
-                      ))),
+                      ).tr())),
                 ),
               ),
             ),
@@ -420,7 +422,7 @@ class _AddCVState extends State<AddCV> {
       builder: (BuildContext context) {
         // return object of type Dialog
         return AlertDialog(
-          title: Text("SURE"),
+          title: Text("SURE").tr(),
           // content: Text(""),
           actions: <Widget>[
             // usually buttons at the bottom of the dialog
@@ -428,7 +430,7 @@ class _AddCVState extends State<AddCV> {
               child: new Text(
                 "Close",
                 style: TextStyle(color: Colors.blue),
-              ),
+              ).tr(),
               onPressed: () {
                 Navigator.pop(context);
               },
@@ -437,7 +439,7 @@ class _AddCVState extends State<AddCV> {
               child: new Text(
                 "remove",
                 style: TextStyle(color: Colors.red),
-              ),
+              ).tr(),
               onPressed: () {
                 setState(() {
                   fileList.removeAt(index);

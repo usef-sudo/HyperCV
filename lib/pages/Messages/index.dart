@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hypercv/Helpers/Device.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class Message extends StatefulWidget {
   @override
@@ -27,10 +28,10 @@ class _MessageState extends State<Message> {
       backgroundColor: Colors.white,
       appBar: AppBar(      iconTheme: IconThemeData(color: Colors.black),
 
-        backgroundColor: Colors.white,title: Text("Messages",style: TextStyle(color: Colors.black),),elevation: 0,centerTitle: true,
+        backgroundColor: Colors.white,title: Text("Messages",style: TextStyle(color: Colors.black),).tr(),elevation: 0,centerTitle: true,
 actions: [
   Padding(
-    padding: const EdgeInsets.all(8.0),
+    padding:  EdgeInsets.all(Device.height * 0.01),
     child: Icon(Icons.search),
   )
 ],
@@ -52,7 +53,7 @@ actions: [
       ),
 body:(x!=0)?Column(children: [
   Center(child: Text("it's look that you donot have any Messages "),),
-Container(height: 20,),
+Container(height: Device.height * 0.022,),
   InkWell(
     onTap: () {
       Navigator.pushNamed(context, "old");
@@ -72,7 +73,7 @@ Container(height: 20,),
               Radius.circular(20.0),
             )),
         child: Padding(
-          padding: const EdgeInsets.all(8.0),
+          padding:  EdgeInsets.all(Device.height * 0.01),
           child: Container(
               decoration: BoxDecoration(
                   border:
@@ -85,7 +86,7 @@ Container(height: 20,),
                     "New Messages",
                     style: TextStyle(
                         fontWeight: FontWeight.bold, color: Colors.white),
-                  ))),
+                  ).tr())),
         ),
       ),
     ),

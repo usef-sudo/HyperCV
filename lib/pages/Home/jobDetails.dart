@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hypercv/Helpers/Device.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 import 'drawer.dart';
 
@@ -21,13 +22,11 @@ backgroundColor: Colors.white,      drawer: MyDrawer(),
         title: Text(
           "Job",
           style: TextStyle(color: Colors.black),
-        ),
+        ).tr(),
         elevation: 0,
         centerTitle: true,
         actions: [
           IconButton(
-
-
 
               icon: Icon(
                 Icons.search,
@@ -60,13 +59,13 @@ backgroundColor: Colors.white,      drawer: MyDrawer(),
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "JOBs",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
-                  ),
+                    "Job",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: Device.width * 0.028),
+                  ).tr(),
                   Row(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding:  EdgeInsets.all(Device.width * 0.01),
                         child: InkWell(
                           onTap: () {
                             Navigator.pop(context);
@@ -80,7 +79,7 @@ backgroundColor: Colors.white,      drawer: MyDrawer(),
                                 ),
                               ),
                               child: Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding:  EdgeInsets.all(Device.width * 0.01),
                                 child: Icon(
                                   Icons.notifications,
                                   color: Colors.green,
@@ -89,7 +88,7 @@ backgroundColor: Colors.white,      drawer: MyDrawer(),
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding:  EdgeInsets.all(Device.width * 0.01),
                         child: InkWell(
                           onTap: () {
                             Navigator.pop(context);
@@ -103,7 +102,7 @@ backgroundColor: Colors.white,      drawer: MyDrawer(),
                                 ),
                               ),
                               child: Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding:  EdgeInsets.all(Device.width * 0.01),
                                 child: Icon(
                                   Icons.search,
                                   color: Colors.green,
@@ -116,7 +115,7 @@ backgroundColor: Colors.white,      drawer: MyDrawer(),
                 ],
               )),
           Container(
-            height: 20,
+            height: Device.width * 0.022,
           ),
 
 
@@ -140,7 +139,7 @@ backgroundColor: Colors.white,      drawer: MyDrawer(),
                               children: [
                                 ListTile(
                                   leading: Padding(
-                                    padding: const EdgeInsets.all(8.0),
+                                    padding:  EdgeInsets.all(Device.width * 0.01),
                                     child: CircleAvatar(
                                       backgroundColor: Colors.white,
 
@@ -188,7 +187,7 @@ Exclusive Version."""),
                 ),
               ),
             ),
-          Container(height: 20,),
+          Container(height: Device.width * 0.022,),
           InkWell(
             onTap: () {
 //todo must create user using ali api
@@ -203,7 +202,7 @@ Exclusive Version."""),
                       Radius.circular(20.0),
                     )),
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding:  EdgeInsets.all(Device.width * 0.01),
                   child: Container(
                       decoration: BoxDecoration(
                           border:
@@ -216,7 +215,7 @@ Exclusive Version."""),
                             "Fast Apply",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, color: Colors.white),
-                          ))),
+                          ).tr())),
                 ),
               ),
             ),

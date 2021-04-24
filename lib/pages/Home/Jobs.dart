@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hypercv/Helpers/Device.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 import 'drawer.dart';
 
@@ -22,7 +23,7 @@ class _JobsState extends State<Jobs> {
         title: Text(
           "Job",
           style: TextStyle(color: Colors.black),
-        ),
+        ).tr(),
         elevation: 0,
         centerTitle: true,
         actions: [
@@ -57,13 +58,13 @@ class _JobsState extends State<Jobs> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "JOBs",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
-                  ),
+                    "job",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: Device.width * 0.028),
+                  ).tr(),
                   Row(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding:  EdgeInsets.all(Device.width * 0.01),
                         child: InkWell(
                           onTap: () {
                             Navigator.pop(context);
@@ -77,7 +78,7 @@ class _JobsState extends State<Jobs> {
                                     ),
                               ),
                               child: Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding:  EdgeInsets.all(Device.width * 0.01),
                                 child: Icon(
                                   Icons.notifications,
                                   color: Colors.green,
@@ -86,7 +87,7 @@ class _JobsState extends State<Jobs> {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding:  EdgeInsets.all(Device.width * 0.01),
                         child: InkWell(
                           onTap: () {
                             Navigator.pop(context);
@@ -100,7 +101,7 @@ class _JobsState extends State<Jobs> {
                                     ),
                               ),
                               child: Padding(
-                                padding: const EdgeInsets.all(8.0),
+                                padding:  EdgeInsets.all(Device.width * 0.01),
                                 child: Icon(
                                   Icons.search,
                                   color: Colors.green,
@@ -113,7 +114,7 @@ class _JobsState extends State<Jobs> {
                 ],
               )),
           Container(
-            height: 20,
+            height: Device.width * 0.022,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -126,8 +127,8 @@ class _JobsState extends State<Jobs> {
     });
                 },
                 child: new Container(
-                  width: 150.0,
-                  height: 50.0,
+                  width: Device.width * 0.15,
+                  height: Device.width * 0.055,
                   decoration: new BoxDecoration(
                     color: isremote ? Colors.grey : Colors.black,
                     border: new Border.all(color: Colors.white, width: 2.0),
@@ -136,8 +137,8 @@ class _JobsState extends State<Jobs> {
                   child: new Center(
                     child: new Text(
                       'Full Time',
-                      style: new TextStyle(fontSize: 18.0, color: Colors.white),
-                    ),
+                      style: new TextStyle(fontSize: Device.width * 0.02, color: Colors.white),
+                    ).tr(),
                   ),
                 ),
               ),
@@ -149,8 +150,8 @@ class _JobsState extends State<Jobs> {
     });
                 },
                 child: new Container(
-                  width: 150.0,
-                  height: 50.0,
+                  width: Device.width * 0.15,
+                  height: Device.width * 0.055,
                   decoration: new BoxDecoration(
                     color: isremote ? Colors.black : Colors.grey,
                     border: new Border.all(color: Colors.white, width: 2.0),
@@ -160,19 +161,19 @@ class _JobsState extends State<Jobs> {
                     child: new Text(
                       'Remote',
                       style: new TextStyle(fontSize: 18.0, color: Colors.white),
-                    ),
+                    ).tr(),
                   ),
                 ),
               ),
             ],
           ),
           Container(
-            height: 12,
+            height: Device.width * 0.014,
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding:  EdgeInsets.all(Device.width * 0.01),
             child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,children: [
-              Text("Recommended Jobs",style: TextStyle(fontWeight: FontWeight.bold),),
+              Text("Recommended Jobs",style: TextStyle(fontWeight: FontWeight.bold),).tr(),
               Icon(Icons.crop_square,color: Colors.green,)
             ],),
           ),
@@ -202,7 +203,7 @@ class _JobsState extends State<Jobs> {
 
                                 ListTile(
                                   leading: Padding(
-                                    padding: const EdgeInsets.all(8.0),
+                                    padding:  EdgeInsets.all(Device.width * 0.01),
                                     child: CircleAvatar(
                                       backgroundColor: Colors.white,
 

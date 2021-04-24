@@ -7,6 +7,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:video_player/video_player.dart';
 
 import 'drawer.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class CV extends StatefulWidget {
   static File CVV;
@@ -31,7 +32,7 @@ class _CVState extends State<CV> {
         title: Text(
           "Add CV",
           style: TextStyle(color: Colors.black),
-        ),
+        ).tr(),
         elevation: 0,
         centerTitle: true,
         actions: [
@@ -58,13 +59,13 @@ class _CVState extends State<CV> {
         children: [
           Center(
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding:  EdgeInsets.all(Device.height * 0.01),
               child: Text(
                 "ADD new Video CV for 0.99 \$",
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: Device.height * 0.03),
-              ),
+              ).tr(),
             ),
           ),
           Padding(
@@ -99,7 +100,7 @@ class _CVState extends State<CV> {
                           ],
                         )
                             : Container(
-                          child: Text("Attach MP4"),
+                          child: Text("Attach MP4").tr(),
                         ),
                         (CV.CVV != null)
                             ? IconButton(
@@ -133,59 +134,59 @@ class _CVState extends State<CV> {
           ),
           Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
             Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text(
-                "Describe your video",
+              padding:  EdgeInsets.all(Device.height * 0.01),
+              child: Text("Describe your video",
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: Device.height * 0.02),
-              ),
+              ).tr(),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding:  EdgeInsets.all(Device.height * 0.01),
               child: InkWell(
                 onTap: () {
                   if (CV.CVV == null) {
                   } else {
                     showDialog(
                         context: context,
-                        builder: (_) => new AlertDialog(
-                          title: new Container(
-                            height: 200,
-                            width: 200,
-                            child: AspectRatio(
-
-                              aspectRatio: _controller.value.aspectRatio,
-                              // Use the VideoPlayer widget to display the video.
-                              child: VideoPlayer(_controller),
-                            ),
-                          ),
-                          actions: <Widget>[
-                            FlatButton(
-                              child: Text('Back'),
-                              onPressed: () {
-                                Navigator.of(context).pop();
-                              },
-                            ),
-                            FlatButton(
-                              child: Text('Play/Pause'),
-                              onPressed: () {
-                                print(_controller.dataSource);
-                                // Wrap the play or pause in a call to `setState`. This ensures the
-                                // correct icon is shown
-                                setState(() {
-                                  // If the video is playing, pause it.
-                                  if (_controller.value.isPlaying) {
-                                    _controller.pause();
-                                  } else {
-                                    // If the video is paused, play it.
-                                    _controller.play();
-                                  }
-                                });
-                              },
-                            ),
-                          ],
-                        ));
+                        builder: (_) => new StatefulBuilder(
+                            builder: (context, setState) {
+                              return  AlertDialog(
+                                title:  Container(
+                                  height: Device.height*0.3,
+                                  width: Device.height*0.3,
+                                  child: AspectRatio(
+                                    aspectRatio: _controller.value.aspectRatio,
+                                    // Use the VideoPlayer widget to display the video.
+                                    child: VideoPlayer(_controller),
+                                  ),
+                                ),
+                                actions: <Widget>[
+                                  FlatButton(
+                                    child: Text('Back').tr(),
+                                    onPressed: () {
+                                      Navigator.of(context).pop();
+                                    },
+                                  ),
+                                  FlatButton(
+                                    child: Icon((_controller.value.isPlaying)?Icons.pause_circle_filled:Icons.play_circle_fill),
+                                    onPressed: () {
+                                      print(_controller.dataSource);
+                                      // Wrap the play or pause in a call to `setState`. This ensures the
+                                      // correct icon is shown
+                                      setState(() {
+                                        // If the video is playing, pause it.
+                                        if (_controller.value.isPlaying) {
+                                          _controller.pause();
+                                        } else {
+                                          // If the video is paused, play it.
+                                          _controller.play();
+                                        }
+                                      });
+                                    },
+                                  ),
+                                ],
+                              );}));
                   }
                 },
                 child: Text(
@@ -193,12 +194,12 @@ class _CVState extends State<CV> {
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: Device.height * 0.02),
-                ),
+                ).tr(),
               ),
             ),
           ]),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding:  EdgeInsets.all(Device.height * 0.01),
             child: Card(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20.0),
@@ -225,7 +226,7 @@ class _CVState extends State<CV> {
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: Device.height * 0.03),
-              ),
+              ).tr(),
             ),
           ),
           Container(
@@ -328,15 +329,15 @@ class _CVState extends State<CV> {
             height: Device.height * 0.02,
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding:  EdgeInsets.all(Device.height * 0.01),
             child: Text(
               "About you",
               style: TextStyle(
                   fontWeight: FontWeight.bold, fontSize: Device.height * 0.02),
-            ),
+            ).tr(),
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding:  EdgeInsets.all(Device.height * 0.01),
             child: Card(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20.0),
@@ -344,7 +345,7 @@ class _CVState extends State<CV> {
                 elevation: 0,
                 color: Color.fromRGBO(238, 238, 255, 1),
                 child: Padding(
-                  padding: EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(Device.height * 0.01),
                   child: TextFormField(
                     // onChanged: (val) => _description = val,
                     maxLines: 5,
@@ -370,7 +371,7 @@ class _CVState extends State<CV> {
                       Radius.circular(20.0),
                     )),
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding:  EdgeInsets.all(Device.height * 0.01),
                   child: Container(
                       decoration: BoxDecoration(
                           border:
@@ -420,7 +421,7 @@ class _CVState extends State<CV> {
       builder: (BuildContext context) {
         // return object of type Dialog
         return AlertDialog(
-          title: Text("SURE"),
+          title: Text("SURE").tr(),
           // content: Text(""),
           actions: <Widget>[
             // usually buttons at the bottom of the dialog
@@ -428,7 +429,7 @@ class _CVState extends State<CV> {
               child: new Text(
                 "Close",
                 style: TextStyle(color: Colors.blue),
-              ),
+              ).tr(),
               onPressed: () {
                 Navigator.pop(context);
               },
@@ -437,7 +438,7 @@ class _CVState extends State<CV> {
               child: new Text(
                 "remove",
                 style: TextStyle(color: Colors.red),
-              ),
+              ).tr(),
               onPressed: () {
                 setState(() {
                   fileList.removeAt(index);

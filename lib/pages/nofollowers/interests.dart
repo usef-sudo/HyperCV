@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hypercv/Helpers/Device.dart';
 import 'package:flutter_chips_input/flutter_chips_input.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class interest extends StatefulWidget {
   @override
@@ -19,7 +20,7 @@ Widget _buildChip(String label) {
       backgroundColor: Color.fromRGBO(238, 238, 255, 1),
       elevation: 2.0,
       shadowColor: Color.fromRGBO(238, 238, 255, 1),
-      padding: EdgeInsets.all(8.0),
+      padding: EdgeInsets.all(Device.height * 0.01,),
       onDeleted: () {
 
       }
@@ -62,8 +63,8 @@ class _interestState extends State<interest> {
           centerTitle: true,
           actions: [
             Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Text("SKIP", style: TextStyle(color: Colors.black)),
+              padding:  EdgeInsets.all(Device.height * 0.01,),
+              child: Text("SKIP", style: TextStyle(color: Colors.black)).tr(),
             )
           ],
           title: Text('',
@@ -76,13 +77,13 @@ class _interestState extends State<interest> {
         children: [
           Center(
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding:  EdgeInsets.all(Device.height * 0.01,),
               child: Text(
-                "ADD Interests",
+                "Add Interests",
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: Device.height * 0.03),
-              ),
+              ).tr(),
             ),
           ),
 
@@ -92,7 +93,7 @@ class _interestState extends State<interest> {
 
           // todo chip ships
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding:  EdgeInsets.all(Device.height * 0.01,),
             child: chipList(),
           ),
 
@@ -106,19 +107,19 @@ class _interestState extends State<interest> {
                   showDialog(
                       context: context,
                       builder: (_) => new AlertDialog(
-                        title: new Text("Write Your Skill"),
+                        title: new Text("Write Your Skill").tr(),
                         content: new TextField(
                           controller: skillc,
                         ),
                         actions: <Widget>[
                           FlatButton(
-                            child: Text('Back'),
+                            child: Text('Back').tr(),
                             onPressed: () {
                               Navigator.of(context).pop();
                             },
                           ),
                           FlatButton(
-                            child: Text('ADD'),
+                            child: Text('ADD').tr(),
                             onPressed: () {
                               //  MySkills.add(_buildChip(skillc.text));
                               MySkillss.add(skillc.text);
@@ -133,7 +134,7 @@ class _interestState extends State<interest> {
                 },
                 child: Chip(
                   backgroundColor: Color.fromRGBO(238, 238, 255, 1),
-                  label: Text("ADD"),
+                  label: Text("ADD").tr(),
                 )),
           ),
 
@@ -156,7 +157,7 @@ class _interestState extends State<interest> {
                       Radius.circular(20.0),
                     )),
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding:  EdgeInsets.all(Device.height * 0.01,),
                   child: Container(
                       decoration: BoxDecoration(
                           border:
@@ -169,7 +170,7 @@ class _interestState extends State<interest> {
                             "Save Interest",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, color: Colors.white),
-                          ))),
+                          ).tr())),
                 ),
               ),
             ),
@@ -203,7 +204,7 @@ class _interestState extends State<interest> {
         backgroundColor: Color.fromRGBO(238, 238, 255, 1),
         elevation: 2.0,
         shadowColor: Color.fromRGBO(238, 238, 255, 1),
-        padding: EdgeInsets.all(8.0),
+        padding: EdgeInsets.all(Device.height * 0.01,),
         onDeleted: () {
           setState((){
 

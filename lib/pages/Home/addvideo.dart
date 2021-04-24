@@ -5,6 +5,7 @@ import 'package:path/path.dart' as p;
 import 'package:flutter/material.dart';
 import 'package:hypercv/Helpers/Device.dart';
 import 'package:video_player/video_player.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class addvideo extends StatefulWidget {
   @override
@@ -44,7 +45,7 @@ class _addvideoState extends State<addvideo> {
           actions: [
             Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Text("SKIP", style: TextStyle(color: Colors.black)),
+              child: Text("SKIP", style: TextStyle(color: Colors.black)).tr(),
             )
           ],
           title: Text('',
@@ -59,11 +60,11 @@ class _addvideoState extends State<addvideo> {
             child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                "ADD Video  ",
+                "ADD Video",
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: Device.height * 0.03),
-              ),
+              ).tr(),
             ),
           ),
           Padding(
@@ -98,7 +99,7 @@ class _addvideoState extends State<addvideo> {
                           ],
                         )
                             : Container(
-                          child: Text("Attach MP4"),
+                          child: Text("Attach MP4").tr(),
                         ),
                         (_certification != null)
                             ? IconButton(
@@ -132,72 +133,74 @@ class _addvideoState extends State<addvideo> {
           ),
           Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding:  EdgeInsets.all(Device.height * 0.01),
               child: Text(
                 "Describe your video",
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: Device.height * 0.02),
-              ),
+              ).tr(),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding:  EdgeInsets.all(Device.height * 0.01),
               child: InkWell(
                 onTap: () {
                   if (_certification == null) {
                   } else {
                     showDialog(
                         context: context,
-                        builder: (_) => new AlertDialog(
-                          title: new Container(
-                            height: 200,
-                            width: 200,
-                            child: AspectRatio(
+                        builder: (_) => new StatefulBuilder(
+                            builder: (context, setState) {
+                              return  AlertDialog(
+                                title: new Container(
+                                  height: Device.height*0.3,
+                                  width: Device.height*0.3,
+                                  child: AspectRatio(
 
-                              aspectRatio: _controller.value.aspectRatio,
-                              // Use the VideoPlayer widget to display the video.
-                              child: VideoPlayer(_controller),
-                            ),
-                          ),
-                          actions: <Widget>[
-                            FlatButton(
-                              child: Text('Back'),
-                              onPressed: () {
-                                Navigator.of(context).pop();
-                              },
-                            ),
-                            FlatButton(
-                              child: Text('Play/Pause'),
-                              onPressed: () {
-                                print(_controller.dataSource);
-                                // Wrap the play or pause in a call to `setState`. This ensures the
-                                // correct icon is shown
-                                setState(() {
-                                  // If the video is playing, pause it.
-                                  if (_controller.value.isPlaying) {
-                                    _controller.pause();
-                                  } else {
-                                    // If the video is paused, play it.
-                                    _controller.play();
-                                  }
-                                });
-                              },
-                            ),
-                          ],
-                        ));
+                                    aspectRatio: _controller.value.aspectRatio,
+                                    // Use the VideoPlayer widget to display the video.
+                                    child: VideoPlayer(_controller),
+                                  ),
+                                ),
+                                actions: <Widget>[
+                                  FlatButton(
+                                    child: Text('Back').tr(),
+                                    onPressed: () {
+                                      Navigator.of(context).pop();
+                                    },
+                                  ),
+                                  FlatButton(
+                                    child: Icon((_controller.value.isPlaying)?Icons.pause_circle_filled:Icons.play_circle_fill),
+                                    onPressed: () {
+                                      print(_controller.dataSource);
+                                      // Wrap the play or pause in a call to `setState`. This ensures the
+                                      // correct icon is shown
+                                      setState(() {
+                                        // If the video is playing, pause it.
+                                        if (_controller.value.isPlaying) {
+                                          _controller.pause();
+                                        } else {
+                                          // If the video is paused, play it.
+                                          _controller.play();
+                                        }
+                                      });
+                                    },
+                                  ),
+                                ],
+                              );}));
                   }
                 },
                 child: Text(
-                  "Preview", //todo make it show the _certification video on alert
+                  "Preview", //todo make it show the CVV video on alert
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: Device.height * 0.02),
-                ),
+                ).tr(),
               ),
             ),
           ]),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding:  EdgeInsets.all(Device.height * 0.01),
             child: Card(
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20.0),
@@ -205,7 +208,7 @@ class _addvideoState extends State<addvideo> {
                 elevation: 0,
                 color: Color.fromRGBO(238, 238, 255, 1),
                 child: Padding(
-                  padding: EdgeInsets.all(8.0),
+                  padding: EdgeInsets.all(Device.height * 0.01),
                   child: TextFormField(
                     // onChanged: (val) => _description = val,
                     maxLines: 5,
@@ -220,7 +223,6 @@ class _addvideoState extends State<addvideo> {
 
           InkWell(
             onTap: () {
-//todo must create user using ali api
               Navigator.pushNamed(context, '');
             },
             child: Center(
@@ -233,7 +235,7 @@ class _addvideoState extends State<addvideo> {
                       Radius.circular(20.0),
                     )),
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding:  EdgeInsets.all(Device.height * 0.01),
                   child: Container(
                       decoration: BoxDecoration(
                           border:

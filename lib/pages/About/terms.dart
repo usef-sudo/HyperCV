@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:hypercv/Helpers/Device.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class Terms extends StatelessWidget {
   @override
@@ -12,7 +13,9 @@ class Terms extends StatelessWidget {
             padding: EdgeInsets.all(
               Device.height * 0.02,
             ),
-            child: InkWell(onTap: (){Navigator.pop(context);},
+            child: InkWell(onTap: (){
+              Navigator.pop(context);
+              },
               child: Container(
                   decoration: BoxDecoration(
                     border: Border.all(width: 1.0),
@@ -26,7 +29,7 @@ class Terms extends StatelessWidget {
           centerTitle: true,
           title: Text('Terms',
               style:
-                  TextStyle(fontWeight: FontWeight.bold, color: Colors.black)),
+                  TextStyle(fontWeight: FontWeight.bold, color: Colors.black)).tr(),
           elevation: 0,
           iconTheme: IconThemeData(color: Colors.black),
           backgroundColor: Colors.white),

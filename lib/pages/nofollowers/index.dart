@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hypercv/Helpers/Device.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class Nofollowers extends StatefulWidget {
   @override
@@ -12,7 +13,7 @@ class _NofollowersState extends State<Nofollowers> {
     return Scaffold(
         appBar: AppBar(      iconTheme: IconThemeData(color: Colors.black),
 
-          backgroundColor: Colors.white,title: Text("News Feed",style: TextStyle(color: Colors.black),),elevation: 0,centerTitle: true,
+          backgroundColor: Colors.white,title: Text("News Feed",style: TextStyle(color: Colors.black),).tr(),elevation: 0,centerTitle: true,
 
 
  ),
@@ -42,7 +43,7 @@ class _NofollowersState extends State<Nofollowers> {
                             "Post a new video ?",
                             style: TextStyle(
                                 color: Colors.black, fontWeight: FontWeight.bold),
-                          ))),
+                          ).tr())),
                 ),
               ),
             ),
@@ -51,15 +52,15 @@ class _NofollowersState extends State<Nofollowers> {
             height: Device.height * 0.01,
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text("it's look that you are not following any one yet"),
+            padding:  EdgeInsets.all(Device.height * 0.01,),
+            child: Text("it's look that you are not following any one yet").tr(),
           ),
           Container(
             height: Device.width * 0.01,
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text("Follow people or add interests"),
+            padding:  EdgeInsets.all(Device.height * 0.01,),
+            child: Text("Follow people or add interests").tr(),
           ),
           Container(
             height: Device.height * 0.02,
@@ -79,7 +80,7 @@ class _NofollowersState extends State<Nofollowers> {
                       Radius.circular(20.0),
                     )),
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding:  EdgeInsets.all(Device.height * 0.01,),
                   child: Container(
                       decoration: BoxDecoration(
                           border:
@@ -92,7 +93,7 @@ class _NofollowersState extends State<Nofollowers> {
                             "Folllow people",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, color: Colors.white),
-                          ))),
+                          ).tr())),
                 ),
               ),
             ),
@@ -115,7 +116,7 @@ class _NofollowersState extends State<Nofollowers> {
                       Radius.circular(20.0),
                     )),
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding:  EdgeInsets.all(Device.height * 0.01,),
                   child: Container(
                       decoration: BoxDecoration(
                           border:
@@ -128,7 +129,7 @@ class _NofollowersState extends State<Nofollowers> {
                             "Add Interests",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, color: Colors.white),
-                          ))),
+                          ).tr())),
                 ),
               ),
             ),
