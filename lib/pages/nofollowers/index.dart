@@ -25,17 +25,17 @@ class _NofollowersState extends State<Nofollowers> {
           ),
           Padding(
             padding: EdgeInsets.fromLTRB(Device.width * 0.1, 0, Device.width * 0.1, 0),
-            child: Card(
+            child:GestureDetector(
+              onTap: (){
+                Navigator.pushNamed(context, "addvideo");
+              },
+              child: Card(
               shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(15.0)),
               elevation: 5,
               child: Padding(
                 padding: EdgeInsets.all(Device.height * 0.012),
-                child: GestureDetector(
-                  onTap: (){
-                    Navigator.pushNamed(context, "addvideo");
-                  },
-                  child: Container(
+                child:  Container(
                       width: Device.width * 0.8,
                       height: Device.height * 0.05,
                       child: Align(
