@@ -12,7 +12,8 @@ class _Profile2State extends State<Profile2> {
   VideoPlayerController _controller;
   List<Widget> MySkills = new List<Widget>();
   List<String> MySkillss = new List<String>();
-
+  bool ispost = false;
+  bool loud = false;
   @override
   void initState() {
     MySkillss.add("Flutter mobile frame work ");
@@ -175,18 +176,33 @@ class _Profile2State extends State<Profile2> {
                           color: Colors.black, fontWeight: FontWeight.bold),
                     ),
                   ]),
-                  Column(children: [
-                    Text(
-                      'Post',
-                      style: TextStyle(
-                          color: Colors.grey, fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                      '45',
-                      style: TextStyle(
-                          color: Colors.black, fontWeight: FontWeight.bold),
-                    ),
-                  ]),
+                  InkWell(
+                    onTap: () {
+                      setState(() {
+                        if (_controller.value.isPlaying) {
+                          _controller.pause();
+                        } else {
+                          // If the video is paused, play it.
+                          _controller.play();
+                        }
+                        ispost = !ispost;
+                      });
+                    },
+                    child: Column(children: [
+                      Text(
+                        'Post',
+                        style: TextStyle(
+                            color: ispost ? Colors.green : Colors.grey,
+                            fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        '45',
+                        style: TextStyle(
+                            color: ispost ? Colors.green : Colors.black,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ]),
+                  ),
                   Column(children: [
                     Text(
                       'Contact',
@@ -206,7 +222,42 @@ class _Profile2State extends State<Profile2> {
               ),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                child: Column(
+                child: ispost
+                    ? (loud
+                    ? Container(
+                  child: Center(
+                    child: CircularProgressIndicator(),
+                  ),
+                )
+                    : Container(
+                  height: 500,
+                  child: GridView.count(
+                    crossAxisCount: 2,
+                    children: List.generate(100, (index) {
+                      return Center(
+                        child: Column(
+                          children: <Widget>[
+                            Image.network(
+                              'https://picsum.photos/500/500?random=$index',
+                              width: 100,
+                              height: 100,
+                            ),
+                            Padding(
+                              padding: const EdgeInsets.all(8.0),
+                              child: Text(
+                                'Video $index',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .headline5,
+                              ),
+                            ),
+                          ],
+                        ),
+                      );
+                    }),
+                  ),
+                ))
+                    : Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [

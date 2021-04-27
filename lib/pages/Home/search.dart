@@ -241,8 +241,8 @@ Widget CardBuilder(List<String> ll) {
                                 width: Device.height * 0.055,
 
                                 child: Icon(
-                                  Icons.messenger,
-                                  color: Colors.grey,
+                                  Icons.messenger_outline,
+                                  color: Colors.white70,
                                 ),
                                 decoration: new BoxDecoration(
                                     color: Colors.green,
