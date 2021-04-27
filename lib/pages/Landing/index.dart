@@ -321,7 +321,7 @@ class _LandingState extends State<Landing> {
                                 "Continue As Guest",
                                 style: TextStyle(
                                     color: Colors.white),
-                              ))),
+                              ).tr())),
                     ),
                   ),
                 ),

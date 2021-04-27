@@ -60,7 +60,9 @@
   "Place :":"المكان",
   "Course :":"المادة",
   "Cancel":"الغاء",
-  "ADD Education":"اضافة دراسة",
+  "Add Education":"اضافة دراسة",
+  "Continue As Guest": "الدخول كزائر",
+
   "Add Work":"اضافة العمل",
   "ADD Skills":"اضافة مهارات",
   "Write Your Skill":"اكتب مهاراتك",
@@ -68,13 +70,16 @@
   "Education": "التعليم",
   "Certifications": "الشهادات",
   "Add Certifications": "اضف الشهادات",
+  "Import your contact": "اضافة من جهات الاتصال",
+
   "Complete Profile": "اكمال الملف الشخصي",
   "Location": "الموقع",
   "Add Location": " اضف الموقع",
   "Video C.V": "فيديو C.V",
-  "Add Vedieo CV": " اضف فيديو C.V",
+  "ADD Video CV": " اضف فيديو C.V",
   "None": "فارغ",
-  "Qalifications": "Qalifications",
-  "Add Qalifications": "Add Qalifications"
+  "Qalifications": "المؤهلات",
+  "Add Qalifications": "اضافة مؤهلات",
+  "Complete Later": "الاكمال لاحقا"
 
 }

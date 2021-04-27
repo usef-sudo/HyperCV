@@ -60,7 +60,7 @@ class _AddCVState extends State<AddCV> {
             child: Padding(
               padding:  EdgeInsets.all( Device.height * 0.01),
               child: Text(
-                "ADD Video CV ",
+                "ADD Video CV",
                 style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: Device.height * 0.03),
@@ -382,7 +382,7 @@ class _AddCVState extends State<AddCV> {
                                   )),
                       child: Center(
                           child: Text(
-                        "Add Vedieo CV",
+                        "ADD new Video CV for 0.99 \$",
                         style: TextStyle(
                             fontWeight: FontWeight.bold, color: Colors.white),
                       ).tr())),

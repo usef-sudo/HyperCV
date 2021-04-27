@@ -1,16 +1,41 @@
 import 'package:flutter/material.dart';
 import 'package:hypercv/Helpers/Device.dart';
 import 'package:hypercv/pages/Home/drawer.dart';
-
+import 'package:hypercv/Helpers/Device.dart';
+import 'package:video_player/video_player.dart';
 class Profile2 extends StatefulWidget {
   @override
   _Profile2State createState() => _Profile2State();
 }
 
 class _Profile2State extends State<Profile2> {
+  VideoPlayerController _controller;
+  List<Widget> MySkills = new List<Widget>();
+  List<String> MySkillss = new List<String>();
+
+  @override
+  void initState() {
+    MySkillss.add("Flutter mobile frame work ");
+    MySkillss.add("ASP");
+    MySkillss.add("Leader");
+    _controller = VideoPlayerController.network('https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4');
+
+    _controller.addListener(() {
+      setState(() {});
+    });
+    _controller.setLooping(true);
+    _controller.initialize().then((_) => setState(() {}));
+    _controller.play();    super.initState();
+  }
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
         iconTheme: IconThemeData(color: Colors.black),
         backgroundColor: Colors.white,
@@ -186,6 +211,31 @@ class _Profile2State extends State<Profile2> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
+                      padding:  EdgeInsets.all(Device.height*0.02),
+                      child:   Container(height: Device.height*0.3,width: Device.width,child:AspectRatio(
+                        aspectRatio: _controller.value.aspectRatio,
+                        // Use the VideoPlayer widget to display the video.
+                        child: VideoPlayer(_controller),
+                      ) ,),
+                    ),
+                    Row(mainAxisAlignment: MainAxisAlignment.end,children: [
+                      IconButton(icon: Icon(Icons.favorite_border,color: Colors.red,),),
+                      Text(" 22")
+                    ],),
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(12, 0, 12, 0),
+                      child: Text('Discription\n',
+                          style: TextStyle(
+                              fontSize: 20, fontWeight: FontWeight.bold)),
+                    ),
+                    Container(
+                        width: Device.width,
+                        child: Text(
+                            'You might consider adding a professional profile section to your resume so employers can immediately see how you could benefit their company. This guide will help you write your professional profile and show you some examples to help you get started.')),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Padding(
                       padding: const EdgeInsets.fromLTRB(12, 0, 12, 0),
                       child: Text('About\n',
                           style: TextStyle(
@@ -200,18 +250,113 @@ class _Profile2State extends State<Profile2> {
                     ),
                     Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: Text('My Skills\n',
+                      child: Text('My Skills',
                           style:
                           TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
                     ),
-                    SizedBox(
-                      height: 20,
+
+                    Container(
+                      height: Device.height * 0.01,
                     ),
+
+                    // todo chip ships
                     Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Text('Qualification\n',
-                          style:
-                          TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
+                      padding:  EdgeInsets.all(Device.height * 0.01),
+                      child: chipList(),
+                    ),
+
+                    Container(
+                      height: Device.height * 0.02,
+                    ),
+                    ExpansionTile(
+                      title: Text(
+                        "work",
+                        style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w500),
+                      ),
+                      children: <Widget>[
+                        ListTile(
+                          title: Text(
+                            "first one",
+                            style: TextStyle(fontWeight: FontWeight.w700),
+                          ),
+                        ),
+                        ListTile(
+                          title: Text(
+                            "second one",
+                            style: TextStyle(fontWeight: FontWeight.w700),
+                          ),
+                        )
+                        ,
+                        ListTile(
+                          title: Text(
+                            "theird one",
+                            style: TextStyle(fontWeight: FontWeight.w700),
+                          ),
+                        )
+                      ],
+                    ),
+                    Container(
+                      height: Device.height * 0.01,
+                    ),
+                    ExpansionTile(
+                      title: Text(
+                        "Education",
+                        style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w500),
+                      ),
+                      children: <Widget>[
+                        ListTile(
+                          title: Text(
+                            "first one",
+                            style: TextStyle(fontWeight: FontWeight.w700),
+                          ),
+                        ),
+                        ListTile(
+                          title: Text(
+                            "second one",
+                            style: TextStyle(fontWeight: FontWeight.w700),
+                          ),
+                        )
+                        ,
+                        ListTile(
+                          title: Text(
+                            "theird one",
+                            style: TextStyle(fontWeight: FontWeight.w700),
+                          ),
+                        )
+                      ],
+                    ),
+                    Container(
+                      height: Device.height * 0.01,
+                    ),
+                    ExpansionTile(
+                      title: Text(
+                        "Certification",
+                        style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w500),
+                      ),
+                      children: <Widget>[
+                        ListTile(
+                          title: Text(
+                            "first one",
+                            style: TextStyle(fontWeight: FontWeight.w700),
+                          ),
+                        ),
+                        ListTile(
+                          title: Text(
+                            "second one",
+                            style: TextStyle(fontWeight: FontWeight.w700),
+                          ),
+                        )
+                        ,
+                        ListTile(
+                          title: Text(
+                            "theird one",
+                            style: TextStyle(fontWeight: FontWeight.w700),
+                          ),
+                        )
+                      ],
+                    ),
+                    Container(
+                      height: Device.height * 0.01,
                     ),
                   ],
                 ),
@@ -221,6 +366,36 @@ class _Profile2State extends State<Profile2> {
         ],
       ),
     );
+  }
+  Widget _buildChip(String label) {
+    return Chip(
+        labelPadding: EdgeInsets.all(2.0),
+        label: Text(
+          label,
+          style: TextStyle(
+            color: Colors.black,
+          ),
+        ),
+        backgroundColor: Color.fromRGBO(238, 238, 255, 1),
+        elevation: 2.0,
+        shadowColor: Color.fromRGBO(238, 238, 255, 1),
+        padding: EdgeInsets.all(Device.height * 0.01),
+        onDeleted: () {
+          setState((){
+
+            MySkillss.remove(label);
+
+          });
+        }
+
+    );
+  }
+
+  chipList() {
+    MySkills.clear();
+
+    MySkillss.forEach((element) {MySkills.add(_buildChip(element));});
+    return Wrap(spacing: 6.0, runSpacing: 6.0, children: MySkills);
   }
   }
 

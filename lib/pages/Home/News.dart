@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hypercv/Helpers/Device.dart';
 
 import 'drawer.dart';
+import 'package:easy_localization/easy_localization.dart';
 
 class News extends StatefulWidget {
   @override

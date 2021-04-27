@@ -248,7 +248,7 @@ class _addvideoState extends State<addvideo> {
                             "Post a new video",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, color: Colors.white),
-                          ))),
+                          ).tr())),
                 ),
               ),
             ),

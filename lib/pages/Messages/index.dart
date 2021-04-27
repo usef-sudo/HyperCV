@@ -187,7 +187,7 @@ elevation: 5,
                       "New Messages",
                       style: TextStyle(
                           fontWeight: FontWeight.bold, color: Colors.white),
-                    ))),
+                    ).tr())),
           ),
         ),
       ),

@@ -5,6 +5,7 @@
   "no": "NO",
   "yes": "YES",
   "Continue": "Continue",
+  "Continue As Guest": "Continue As Guest",
   "Terms": "Terms",
   "Settings": "Settings",
   "SKIP": "Skip",
@@ -45,7 +46,7 @@
   "New Messages": "New Messages",
   "Select a person to message": "Select a person to message",
   "Follow people": "Follow people",
-  "Import your contact": "اضافة من جهات الاتصال",
+  "Import your contact": "Import your contact",
   "News Feed": "News Feed",
   "Post a new video ?": "Post a new video ?",
   "it's look that you are not following any one yet": "it's look that you are not following any one yet",
@@ -61,7 +62,7 @@
   "Place :":"Place :",
   "Course :":"Course :",
   "Cancel":"Cancel",
-  "ADD Education":"ADD Education",
+  "Add Education":"ADD Education",
   "Add Work":"Add Work",
   "ADD Skills":"ADD Skills",
   "Write Your Skill":"Write Your Skill",
@@ -73,10 +74,12 @@
   "Location": "Location",
   "Add Location": "Add Location",
   "Video C.V": "Video C.V",
-  "Add Vedieo CV": "Add Vedieo CV",
+  "ADD Video CV": "Add Vedieo CV",
   "Qalifications": "Qalifications",
   "Add Qalifications": "Add Qalifications",
-  "None": "None"
+  "None": "None",
+  "Complete Later": "Complete Later"
+
 
 }
 

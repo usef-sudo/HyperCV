@@ -301,7 +301,7 @@ class _certificationState extends State<certification> {
                               )),
                           child: Center(
                               child: Text(
-                                "Add Certification",
+                                "Add Certifications",
                                 style: TextStyle(
                                     fontWeight: FontWeight.bold, color: Colors.white),
                               ).tr())),

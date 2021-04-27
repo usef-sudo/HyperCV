@@ -228,10 +228,13 @@ Widget CardBuilder(List<String> ll) {
                                 width: Device.height * 0.15,
                                 height: Device.height * 0.055,
                                 child: Center(
-                                      child: Text(
+                                      child: Padding(
+                                        padding:  EdgeInsets.all(Device.height*0.01),
+                                        child: Text(
                                     "See Portfolio",
                                     style: TextStyle(fontWeight: FontWeight.bold),
-                                ).tr()),
+                                ).tr(),
+                                      )),
                               ),
                                   )),
                             ),

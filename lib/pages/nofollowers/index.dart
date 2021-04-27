@@ -11,6 +11,7 @@ class _NofollowersState extends State<Nofollowers> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
         appBar: AppBar(      iconTheme: IconThemeData(color: Colors.black),
 
           backgroundColor: Colors.white,title: Text("News Feed",style: TextStyle(color: Colors.black),).tr(),elevation: 0,centerTitle: true,

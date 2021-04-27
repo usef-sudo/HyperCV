@@ -58,8 +58,8 @@ class _JobsState extends State<Jobs> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text(
-                    "job",
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: Device.width * 0.028),
+                    "Job",
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: Device.height * 0.025),
                   ).tr(),
                   Row(
                     children: [
@@ -127,8 +127,8 @@ class _JobsState extends State<Jobs> {
     });
                 },
                 child: new Container(
-                  width: Device.width * 0.15,
-                  height: Device.width * 0.055,
+                  width: Device.width * 0.3,
+                  height: Device.width * 0.1,
                   decoration: new BoxDecoration(
                     color: isremote ? Colors.grey : Colors.black,
                     border: new Border.all(color: Colors.white, width: 2.0),
@@ -137,7 +137,7 @@ class _JobsState extends State<Jobs> {
                   child: new Center(
                     child: new Text(
                       'Full Time',
-                      style: new TextStyle(fontSize: Device.width * 0.02, color: Colors.white),
+                      style: new TextStyle(fontSize: Device.width * 0.04, color: Colors.white),
                     ).tr(),
                   ),
                 ),
@@ -150,8 +150,8 @@ class _JobsState extends State<Jobs> {
     });
                 },
                 child: new Container(
-                  width: Device.width * 0.15,
-                  height: Device.width * 0.055,
+                  width: Device.width * 0.3,
+                  height: Device.width * 0.1,
                   decoration: new BoxDecoration(
                     color: isremote ? Colors.black : Colors.grey,
                     border: new Border.all(color: Colors.white, width: 2.0),
@@ -160,7 +160,7 @@ class _JobsState extends State<Jobs> {
                   child: new Center(
                     child: new Text(
                       'Remote',
-                      style: new TextStyle(fontSize: 18.0, color: Colors.white),
+                      style: new TextStyle(fontSize: Device.width * 0.04, color: Colors.white),
                     ).tr(),
                   ),
                 ),
@@ -171,9 +171,9 @@ class _JobsState extends State<Jobs> {
             height: Device.width * 0.014,
           ),
           Padding(
-            padding:  EdgeInsets.all(Device.width * 0.01),
+            padding:  EdgeInsets.all(Device.width * 0.02),
             child: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,children: [
-              Text("Recommended Jobs",style: TextStyle(fontWeight: FontWeight.bold),).tr(),
+              Text("Recommended Jobs",style: TextStyle(fontWeight: FontWeight.bold,fontSize: Device.height*0.03),).tr(),
               Icon(Icons.crop_square,color: Colors.green,)
             ],),
           ),

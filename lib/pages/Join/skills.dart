@@ -317,7 +317,7 @@ class _SkillsState extends State<Skills> {
                       "Complete Later",
                       style: TextStyle(
                           fontWeight: FontWeight.bold, color: Colors.grey),
-                    ))),
+                    ).tr())),
               ),
             ),
           ),

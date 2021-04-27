@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hypercv/Helpers/Device.dart';
 import 'package:flutter_chips_input/flutter_chips_input.dart';
 import 'package:easy_localization/easy_localization.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class search extends StatefulWidget {
   @override
@@ -10,8 +11,14 @@ class search extends StatefulWidget {
 class _searchState extends State<search> {
   List<String> facebookuser = new List<String>();
   TextEditingController _search = new TextEditingController();
+  String lang ='EN';
   @override
   void initState() {
+    SharedPreferences.getInstance().then((SharedPreferences sp) async {
+      setState(() {
+        lang = sp.getString('lang') ?? 'EN';
+      });
+    });
     facebookuser.add("1");
     facebookuser.add("2");
     // TODO: implement initState
@@ -93,7 +100,7 @@ class _searchState extends State<search> {
 
 
                         hintStyle: new TextStyle(color: Colors.grey[600]),
-                        hintText: "Search..",
+                        hintText: (lang=='EN')?"Search..":"ابحث هنا",
                         fillColor: Color.fromRGBO(238, 238, 255, 1)),
                   ),
                 ),                Container(
@@ -102,7 +109,7 @@ class _searchState extends State<search> {
 
                 // the tab bar with two items
                 SizedBox(
-                  height: Device.height * 0.055,
+                  height: Device.height * 0.065,
                   child: AppBar(
                     elevation: 0,
                     backgroundColor: Colors.white,
@@ -217,10 +224,13 @@ Widget CardBuilder(List<String> ll) {
                                       width: Device.height * 0.15,
                                       height: Device.height * 0.055,
                                       child: Center(
-                                          child: Text(
-                                            "See Portfolio",
-                                            style: TextStyle(fontWeight: FontWeight.bold),
-                                          ).tr()),
+                                          child: Padding(
+                                            padding:  EdgeInsets.all(Device.height*0.01),
+                                            child: Text(
+                                              "See Portfolio",
+                                              style: TextStyle(fontWeight: FontWeight.bold),
+                                            ).tr(),
+                                          )),
                                     ),
                                   )),
                             ),

@@ -41,7 +41,7 @@ class _oldState extends State<old> {
         children: [
           Padding(
             padding:  EdgeInsets.all(Device.height * 0.01),
-            child: Text("Select a person to message",style: TextStyle(fontWeight: FontWeight.bold),).tr(),
+            child: Text("Select a person to message",style: TextStyle(fontWeight: FontWeight.bold,fontSize: Device.height*0.03),).tr(),
           ),
           Expanded(child: ListView.builder(
             shrinkWrap: true,

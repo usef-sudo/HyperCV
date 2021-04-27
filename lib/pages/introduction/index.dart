@@ -80,8 +80,21 @@ class _introductionState extends State<introduction> {
             InkWell(
               onTap: () {
 //todo must sign user using ali api
-                if (dropdownValue != '')
-                  Navigator.pushNamed(context, 'Landing');
+                SharedPreferences.getInstance().then((SharedPreferences sp) {
+                  if (dropdownValue == 'English') {
+                    setState(() {
+                      sp.setString('lang', 'EN');
+                      sp.setBool('auth', true);
+                      //  context.locale = Locale('en', 'JO');
+
+                      EasyLocalization.of(context)
+                          .setLocale(Locale("en", "JO"));
+                    });
+                    Navigator.pushNamed(context, 'Landing');
+                  } else {
+                    Navigator.pushNamed(context, 'Landing');
+                  }
+                });
               },
               child: Center(
                 child: Container(
@@ -150,7 +163,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
         SharedPreferences.getInstance().then((SharedPreferences sp) {
           if (dropdownValue == "English") {
             setState(() {
-              sp.setString('Lang', 'EN');
+              sp.setString('lang', 'EN');
               sp.setBool('auth', true);
               //  context.locale = Locale('en', 'JO');
 
@@ -158,7 +171,7 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
             });
           } else {
             setState(() {
-              sp.setString('Lang', 'AR');
+              sp.setString('lang', 'AR');
               //  context.locale = Locale('ar', 'JO');
               sp.setBool('auth', true);
 
@@ -171,7 +184,10 @@ class _MyStatefulWidgetState extends State<MyStatefulWidget> {
           .map<DropdownMenuItem<String>>((String value) {
         return DropdownMenuItem<String>(
           value: value,
-          child: Text(value),
+          child: Padding(
+            padding:  EdgeInsets.all(Device.height*0.02),
+            child: Text(value),
+          ),
         );
       }).toList(),
     );

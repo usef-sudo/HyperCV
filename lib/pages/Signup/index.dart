@@ -26,7 +26,7 @@ class _SignupState extends State<Signup> {
     location =TextEditingController();
     SharedPreferences.getInstance().then((SharedPreferences sp) async {
       setState(() {
-        lang = sp.getString('lang') ?? 'AR';
+        lang = sp.getString('lang') ?? 'EN';
       });
     });
 
@@ -219,6 +219,7 @@ class _SignupState extends State<Signup> {
                               color: Colors.green[800],
                               width: 1.0
                           ),
+                          //todo
                           borderRadius: BorderRadius.all(
                               Radius.circular(20.0) //
                           )),child: Center(child: Text("JOIN",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),).tr())),

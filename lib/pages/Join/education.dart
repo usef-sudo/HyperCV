@@ -56,7 +56,7 @@ class _educationState extends State<education> {
                 child: Padding(
                   padding:  EdgeInsets.all(Device.height * 0.01),
                   child: Text(
-                    "ADD Education",
+                    "Add Education",
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: Device.height * 0.03),
