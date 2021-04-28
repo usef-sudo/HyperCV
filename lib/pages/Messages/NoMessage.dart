@@ -78,36 +78,52 @@ class _NoMessageState extends State<NoMessage> {
           ),
           Expanded(
             flex: 1,
-            child: Padding(
-              padding: EdgeInsets.fromLTRB(
-                  Device.width * 0.00, 0, Device.width * 0.00, 0),
+            child:  Align(
+              alignment: Alignment.bottomCenter,
               child: Card(
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15.0)),
                 elevation: 5,
-                child: Padding(
-                  padding: EdgeInsets.all(Device.height * 0.0),
-                  child: Container(
-                      // width: Device.width * 0.95,
-                      // height: Device.height * 0.15,
-                      child: Row(
-                        children: [
-                          Flexible(
-                            child: Align(
-                                alignment: Alignment.centerLeft,
-                                child: TextField(
-                                  maxLines: 5,
-                                  decoration: InputDecoration(
-                                    hintText: (lang=='EN')?'Send Message ...':"ارسل رسالة",
-                                  ),
-                                  style: TextStyle(
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold),
-                                )),
+                child: Container(
+                  padding: EdgeInsets.only(left: 10,bottom: 10,top: 10),
+                  height: 60,
+                  width: double.infinity,
+                  color: Colors.white,
+                  child: Row(
+                    children: <Widget>[
+                      // GestureDetector(
+                      //   onTap: (){
+                      //   },
+                      //   child: Container(
+                      //     height: 30,
+                      //     width: 30,
+                      //     decoration: BoxDecoration(
+                      //       color: Colors.lightBlue,
+                      //       borderRadius: BorderRadius.circular(30),
+                      //     ),
+                      //     child: Icon(Icons.add, color: Colors.white, size: 20, ),
+                      //   ),
+                      // ),
+                      SizedBox(width: 15,),
+                      Expanded(
+                        child: TextField(
+                          decoration: InputDecoration(
+                              hintText: "Write message...",
+                              hintStyle: TextStyle(color: Colors.black54),
+                              border: InputBorder.none
                           ),
-                          InkWell(onTap: () {}, child: Icon(Icons.send))
-                        ],
-                      )),
+                        ),
+                      ),
+                      SizedBox(width: 15,),
+                      FloatingActionButton(
+                        onPressed: (){},
+                        child: Icon(Icons.send,color: Colors.white,size: 18,),
+                        backgroundColor: Colors.black,
+                        elevation: 0,
+                      ),
+                    ],
+
+                  ),
                 ),
               ),
             ),
